@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://geekerstar.github.io/"/>
+  <link href="https://geekerstar.github.io/"/>
   <updated>2018-12-19T12:02:35.940Z</updated>
-  <id>http://geekerstar.github.io/</id>
+  <id>https://geekerstar.github.io/</id>
   
   <author>
     <name>Geekerstar</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>test</title>
-    <link href="http://geekerstar.github.io/2018/12/19/test/"/>
-    <id>http://geekerstar.github.io/2018/12/19/test/</id>
+    <link href="https://geekerstar.github.io/2018/12/19/test/"/>
+    <id>https://geekerstar.github.io/2018/12/19/test/</id>
     <published>2018-12-19T12:02:35.000Z</published>
     <updated>2018-12-19T12:02:35.940Z</updated>
     
@@ -32,8 +32,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://geekerstar.github.io/2018/12/19/hello-world/"/>
-    <id>http://geekerstar.github.io/2018/12/19/hello-world/</id>
+    <link href="https://geekerstar.github.io/2018/12/19/hello-world/"/>
+    <id>https://geekerstar.github.io/2018/12/19/hello-world/</id>
     <published>2018-12-19T11:39:18.734Z</published>
     <updated>2018-12-19T11:39:18.734Z</updated>
     
