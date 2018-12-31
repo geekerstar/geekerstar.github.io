@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://geekerstar.github.io/"/>
-  <updated>2018-12-26T09:55:27.780Z</updated>
+  <updated>2018-12-31T13:20:33.535Z</updated>
   <id>https://geekerstar.github.io/</id>
   
   <author>
@@ -17,11 +17,95 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Android开发相关知识总结</title>
+    <link href="https://geekerstar.github.io/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/"/>
+    <id>https://geekerstar.github.io/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/</id>
+    <published>2018-12-31T13:20:10.302Z</published>
+    <updated>2018-12-31T13:20:33.535Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Android面试题&quot;&gt;&lt;a href=&quot;#Android面试题&quot; class=&quot;headerlink&quot; title=&quot;Android面试题&quot;&gt;&lt;/a&gt;Android面试题&lt;/h1&gt;&lt;!-- TOC --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="android" scheme="https://geekerstar.github.io/categories/android/"/>
+    
+    
+      <category term="android" scheme="https://geekerstar.github.io/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>安卓开发项目相关问题总结</title>
+    <link href="https://geekerstar.github.io/2018/12/31/an-zhuo-kai-fa-xiang-mu-xiang-guan-wen-ti-zong-jie/"/>
+    <id>https://geekerstar.github.io/2018/12/31/an-zhuo-kai-fa-xiang-mu-xiang-guan-wen-ti-zong-jie/</id>
+    <published>2018-12-31T13:16:44.167Z</published>
+    <updated>2018-12-31T13:20:34.269Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;项目相关&quot;&gt;&lt;a href=&quot;#项目相关&quot; class=&quot;headerlink&quot; title=&quot;项目相关&quot;&gt;&lt;/a&gt;项目相关&lt;/h1&gt;&lt;!-- TOC --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-基于android和java的流式二维码数据传输系统&quot;&gt;1.
+        
+      
+    
+    </summary>
+    
+      <category term="android" scheme="https://geekerstar.github.io/categories/android/"/>
+    
+    
+      <category term="android" scheme="https://geekerstar.github.io/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Android开发相关知识总结</title>
+    <link href="https://geekerstar.github.io/2018/12/31/11/"/>
+    <id>https://geekerstar.github.io/2018/12/31/11/</id>
+    <published>2018-12-31T12:46:59.137Z</published>
+    <updated>2018-12-31T13:20:36.952Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Android面试题&quot;&gt;&lt;a href=&quot;#Android面试题&quot; class=&quot;headerlink&quot; title=&quot;Android面试题&quot;&gt;&lt;/a&gt;Android面试题&lt;/h1&gt;&lt;!-- TOC --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="android" scheme="https://geekerstar.github.io/categories/android/"/>
+    
+    
+      <category term="android" scheme="https://geekerstar.github.io/tags/android/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SpringBoot基础</title>
     <link href="https://geekerstar.github.io/2018/11/25/springboot-ji-chu/"/>
     <id>https://geekerstar.github.io/2018/11/25/springboot-ji-chu/</id>
     <published>2018-11-25T04:27:31.732Z</published>
-    <updated>2018-12-26T09:55:27.780Z</updated>
+    <updated>2018-12-31T12:56:14.190Z</updated>
     
     <summary type="html">
     
@@ -47,7 +131,7 @@
     <link href="https://geekerstar.github.io/2018/08/14/docker-qian-hou-duan-fen-chi/"/>
     <id>https://geekerstar.github.io/2018/08/14/docker-qian-hou-duan-fen-chi/</id>
     <published>2018-08-14T09:36:05.748Z</published>
-    <updated>2018-12-26T09:56:03.640Z</updated>
+    <updated>2018-12-31T12:56:13.014Z</updated>
     
     <summary type="html">
     
