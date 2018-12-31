@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://geekerstar.github.io/"/>
-  <updated>2018-12-31T14:31:00.245Z</updated>
+  <updated>2018-12-31T14:49:52.522Z</updated>
   <id>https://geekerstar.github.io/</id>
   
   <author>
@@ -15,6 +15,161 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数据库知识点总结</title>
+    <link href="https://geekerstar.github.io/2018/12/31/shu-ju-ku-zhi-shi-dian-zong-jie/"/>
+    <id>https://geekerstar.github.io/2018/12/31/shu-ju-ku-zhi-shi-dian-zong-jie/</id>
+    <published>2018-12-31T14:49:04.905Z</published>
+    <updated>2018-12-31T14:49:52.522Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;!-- TOC --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-范式&quot;&gt;1. 范式&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#11-1nf&quot;&gt;1.1. 1NF&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#12-2nf&quot;&gt;1.2. 2NF&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="数据库" scheme="https://geekerstar.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+    
+      <category term="数据库" scheme="https://geekerstar.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>数据结构知识点总结</title>
+    <link href="https://geekerstar.github.io/2018/12/31/shu-ju-jie-gou-zhi-shi-dian-zong-jie/"/>
+    <id>https://geekerstar.github.io/2018/12/31/shu-ju-jie-gou-zhi-shi-dian-zong-jie/</id>
+    <published>2018-12-31T14:47:39.003Z</published>
+    <updated>2018-12-31T14:48:23.352Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;!-- TOC --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-各种排序算法的性质&quot;&gt;1. 各种排序算法的性质&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-二叉搜索树avl树和红黑树的复杂度&quot;&gt;2. 二叉搜索树、AVL树和红黑树的复杂度&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="数据结构" scheme="https://geekerstar.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+    
+      <category term="数据结构" scheme="https://geekerstar.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="算法" scheme="https://geekerstar.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式知识点总结</title>
+    <link href="https://geekerstar.github.io/2018/12/31/she-ji-mo-shi-zhi-shi-dian-zong-jie/"/>
+    <id>https://geekerstar.github.io/2018/12/31/she-ji-mo-shi-zhi-shi-dian-zong-jie/</id>
+    <published>2018-12-31T14:45:24.990Z</published>
+    <updated>2018-12-31T14:47:03.342Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;!-- TOC --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-常用设计模式&quot;&gt;1. 常用设计模式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-设计模式的六大原则&quot;&gt;2. 设计模式的六大原则&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#3-什么是高内聚低耦合&quot;&gt;3.
+        
+      
+    
+    </summary>
+    
+      <category term="设计模式" scheme="https://geekerstar.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式" scheme="https://geekerstar.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>零散知识</title>
+    <link href="https://geekerstar.github.io/2018/12/31/ling-san-zhi-shi/"/>
+    <id>https://geekerstar.github.io/2018/12/31/ling-san-zhi-shi/</id>
+    <published>2018-12-31T14:44:01.442Z</published>
+    <updated>2018-12-31T14:46:17.638Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;!-- TOC --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-xml和json的区别&quot;&gt;1. XML和JSON的区别&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#11-xml&quot;&gt;1.1. XML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#12-json&quot;&gt;1.2.
+        
+      
+    
+    </summary>
+    
+      <category term="其他" scheme="https://geekerstar.github.io/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="xml" scheme="https://geekerstar.github.io/tags/xml/"/>
+    
+      <category term="json" scheme="https://geekerstar.github.io/tags/json/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络知识总结</title>
+    <link href="https://geekerstar.github.io/2018/12/31/ji-suan-ji-wang-luo-zhi-shi-zong-jie/"/>
+    <id>https://geekerstar.github.io/2018/12/31/ji-suan-ji-wang-luo-zhi-shi-zong-jie/</id>
+    <published>2018-12-31T14:40:34.000Z</published>
+    <updated>2018-12-31T14:42:56.410Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;!-- TOC --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-计算机网络分层体系结构&quot;&gt;1. 计算机网络分层体系结构&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-数据进入协议栈时的封装&quot;&gt;2. 数据进入协议栈时的封装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="计算机基础" scheme="https://geekerstar.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="网络" scheme="https://geekerstar.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>Python常见代码总结</title>
