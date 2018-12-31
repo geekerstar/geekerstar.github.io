@@ -629,7 +629,7 @@
 <li>您可以通过将Intent传递到<code>sendBroadcast()</code>、<code>sendOrderedBroadcast()</code>或<code>sendStickyBroadcast()</code>等方法来发起广播。</li>
 <li>您可以通过在ContentResolver上调用<code>query()</code>来对内容提供程序执行查询。</li>
 </ul>
-<h2 id="3-画出Activity的生命周期图"><a href="#3-画出Activity的生命周期图" class="headerlink" title="3. 画出Activity的生命周期图"></a>3. 画出Activity的生命周期图</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/images/activity_lifecycle.png" alt="activity lifecycle"></p>
+<h2 id="3-画出Activity的生命周期图"><a href="#3-画出Activity的生命周期图" class="headerlink" title="3. 画出Activity的生命周期图"></a>3. 画出Activity的生命周期图</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/activity_lifecycle.png" alt="activity lifecycle"></p>
 <h2 id="4-介绍下不同场景下Activity生命周期的变化过程"><a href="#4-介绍下不同场景下Activity生命周期的变化过程" class="headerlink" title="4. 介绍下不同场景下Activity生命周期的变化过程"></a>4. 介绍下不同场景下Activity生命周期的变化过程</h2><ul>
 <li>启动Activity：<code>onCreate()</code> –&gt; <code>onStart()</code> –&gt; <code>onResume()</code>，Activity进入运行状态。</li>
 <li>Activity退居后台：当前Activity转到新的Activity界面或按Home键回到主屏：<code>onPause()</code> –&gt; <code>onStop()</code>，进入停滞状态；这里有一种特殊情况，如果新Activity采用了透明主题，那么当前Activity不会回调<code>onStop()</code>。</li>
@@ -643,7 +643,7 @@
 <li>当应用遇到意外情况（如：内存不足、用户直接按Home键）由系统销毁一个Activity，<code>onSaveInstanceState()</code>会被调用。但是当用户主动去销毁一个Activity时，例如在应用中按返回键，<code>onSaveInstanceState()</code>就不会被调用。除非该activity是被用户主动销毁的，通常<code>onSaveInstanceState()</code>只适合用于保存一些临时性的状态，而<code>onPause()</code>适合用于数据的持久化保存。</li>
 <li>重写<code>onSaveInstanceState()</code>方法，在此方法中保存需要保存的数据，该方法将会在activity被回收之前调用。通过重写<code>onRestoreInstanceState()</code>方法可以从中提取保存好的数据。</li>
 </ul>
-<h2 id="7-什么是任务？"><a href="#7-什么是任务？" class="headerlink" title="7. 什么是任务？"></a>7. 什么是任务？</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/images/activity_task.png" alt="Activity Task"></p>
+<h2 id="7-什么是任务？"><a href="#7-什么是任务？" class="headerlink" title="7. 什么是任务？"></a>7. 什么是任务？</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/activity_task.png" alt="Activity Task"></p>
 <p>任务是一个有机整体，当用户开始新任务或通过“主页”按钮转到主屏幕时，可以移动到“后台”。尽管在后台时，该任务中的所有Activity全部停止，但是任务的返回栈仍旧不变，也就是说，当另一个任务发生时，该任务仅仅失去焦点而已，如图所示。然后，任务可以返回到“前台”，用户就能够回到离开时的状态。</p>
 <h2 id="8-Activity的启动模式？"><a href="#8-Activity的启动模式？" class="headerlink" title="8. Activity的启动模式？"></a>8. Activity的启动模式？</h2><ul>
 <li>standard（默认模式）：系统在启动Activity的任务中创建Activity的新实例并向其传送Intent。Activity可以多次实例化，而每个实例均可属于不同的任务，并且一个任务可以拥有多个实例。</li>
@@ -707,14 +707,14 @@
 <li><code>startService()</code>：只是启动Service，Activity和Service并没有绑定，只有当Service调用<code>stopService()</code>服务才会终止。</li>
 <li><code>bindService()</code>：这种启动方式Activity和Service进行了绑定，启动Service的组件可以通过回调获取Service的代理对象和Service交互；当启动方销毁时，Service也会自动进行<code>unBind()</code>操作，当发现所有绑定都进行了<code>unBind()</code>时才会销毁Service。</li>
 </ul>
-<h2 id="18-Service的生命周期"><a href="#18-Service的生命周期" class="headerlink" title="18. Service的生命周期"></a>18. Service的生命周期</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/images/service_lifecycle.png" alt="service lifecycle"></p>
+<h2 id="18-Service的生命周期"><a href="#18-Service的生命周期" class="headerlink" title="18. Service的生命周期"></a>18. Service的生命周期</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/service_lifecycle.png" alt="service lifecycle"></p>
 <h2 id="19-Activity怎么和Service绑定，怎么在Activity中启动自己对应的Service？"><a href="#19-Activity怎么和Service绑定，怎么在Activity中启动自己对应的Service？" class="headerlink" title="19. Activity怎么和Service绑定，怎么在Activity中启动自己对应的Service？"></a>19. Activity怎么和Service绑定，怎么在Activity中启动自己对应的Service？</h2><ul>
 <li>Activity通过<code>bindService(Intent service，ServiceConnection conn，int flags)</code>跟Service进行绑定，当绑定成功的时候Service会将代理对象通过回调的形式传给<code>conn</code>，这样我们就拿到了Service提供的服务代理对象。</li>
 <li>在Activity中可以通过<code>startService()</code>和<code>bindService()</code>方法启动Service。一般情况下如果想获取Service的服务对象那么肯定需要通过<code>bindService()</code>方法，比如音乐播放器，第三方支付等。如果仅仅只是为了开启一个后台任务那么可以使用<code>startService()</code>方法。</li>
 </ul>
 <h2 id="20-允许绑定的已启动服务的生命周期"><a href="#20-允许绑定的已启动服务的生命周期" class="headerlink" title="20. 允许绑定的已启动服务的生命周期"></a>20. 允许绑定的已启动服务的生命周期</h2><p>当服务与所有客户端之间的绑定全部取消时，Android系统便会销毁服务。不过，如果您选择实现<code>onStartCommand()</code>回调方法，则您必须显式停止服务，因为系统现在已将服务视为已启动。在此情况下，服务将一直运行到其通过<code>stopSelf()</code>自行停止，或其他组件调用<code>stopService()</code>为止，无论其是否绑定到任何客户端。</p>
 <p>此外，如果您的服务已启动并接受绑定，则当系统调用您的<code>onUnbind()</code>方法时，如果您想在客户端下一次绑定到服务时接收<code>onRebind()</code>调用，则可选择返回true。<code>onRebind()</code>返回空值，但客户端仍在其<code>onServiceConnected()</code>回调中接收IBinder。</p>
-<p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/images/service_binding_tree_lifecycle.png" alt="service binding tree lifecycle"></p>
+<p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/service_binding_tree_lifecycle.png" alt="service binding tree lifecycle"></p>
 <h2 id="21-Service中可以弹Toast吗？"><a href="#21-Service中可以弹Toast吗？" class="headerlink" title="21. Service中可以弹Toast吗？"></a>21. Service中可以弹Toast吗？</h2><ul>
 <li>这个问题其实就是问一下Service是执行在UI线程中吗？类似的问题还有”Service的<code>onCreate()</code>回调函数可以做耗时的操作吗？”，”Service是否在main thread中执行”，”Service和Activity在同一个线程吗？”等；</li>
 <li>我们要牢记一句真理”默认情况下四大组件都是在UI线程中执行的”，Service本身就是Context的子类，我们可以获取到Context对象，所以Service中当然可以弹Toast，同理，Service的<code>onCreate()</code>回调函数不可以做耗时的操作。</li>
@@ -825,7 +825,7 @@
 <li><code>android:layout_gravity</code>是让该布局在其父控件中的布局方式。</li>
 <li><code>android:gravity</code>是该布局布置其子对象的布局方式。</li>
 </ul>
-<h2 id="34-Android平台架构"><a href="#34-Android平台架构" class="headerlink" title="34. Android平台架构"></a>34. Android平台架构</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/images/android_platform.png" alt="android platform"></p>
+<h2 id="34-Android平台架构"><a href="#34-Android平台架构" class="headerlink" title="34. Android平台架构"></a>34. Android平台架构</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/android_platform.png" alt="android platform"></p>
 <h3 id="34-1-系统应用"><a href="#34-1-系统应用" class="headerlink" title="34.1. 系统应用"></a>34.1. 系统应用</h3><p>Android随附一套用于电子邮件、短信、日历、互联网浏览和联系人等的核心应用。平台随附的应用与用户可以选择安装的应用一样，没有特殊状态。因此第三方应用可成为用户的默认网络浏览器、短信Messenger甚至默认键盘（有一些例外，例如系统的”设置”应用）。</p>
 <p>系统应用可用作用户的应用，以及提供开发者可从其自己的应用访问的主要功能。例如，如果您的应用要发短信，您无需自己构建该功能，可以改为调用已安装的短信应用向您指定的接收者发送消息。</p>
 <h3 id="34-2-Java-API框架"><a href="#34-2-Java-API框架" class="headerlink" title="34.2. Java API框架"></a>34.2. Java API框架</h3><p>您可通过以Java语言编写的API使用Android OS的整个功能集。这些API形成创建Android应用所需的构建块，它们可简化核心模块化系统组件和服务的重复使用，包括以下组件和服务：</p>
@@ -851,13 +851,13 @@
 <h3 id="34-5-硬件抽象层（HAL）"><a href="#34-5-硬件抽象层（HAL）" class="headerlink" title="34.5. 硬件抽象层（HAL）"></a>34.5. 硬件抽象层（HAL）</h3><p>硬件抽象层（HAL）提供标准界面，向更高级别的Java API框架显示设备硬件功能。HAL包含多个库模块，其中每个模块都为特定类型的硬件组件实现一个界面，例如相机或蓝牙模块。当框架API要求访问设备硬件时，Android系统将为该硬件组件加载库模块。</p>
 <h3 id="34-6-Linux-内核"><a href="#34-6-Linux-内核" class="headerlink" title="34.6. Linux 内核"></a>34.6. Linux 内核</h3><p>Android平台的基础是Linux内核。例如，Android Runtime（ART）依靠Linux内核来执行底层功能，例如线程和低层内存管理。</p>
 <p>使用Linux内核可让Android利用主要安全功能，并且允许设备制造商为著名的内核开发硬件驱动程序。</p>
-<h2 id="35-Fragment生命周期"><a href="#35-Fragment生命周期" class="headerlink" title="35. Fragment生命周期"></a>35. Fragment生命周期</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/images/fragment_lifecycle.png" alt="fragment lifecycle"></p>
+<h2 id="35-Fragment生命周期"><a href="#35-Fragment生命周期" class="headerlink" title="35. Fragment生命周期"></a>35. Fragment生命周期</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/fragment_lifecycle.png" alt="fragment lifecycle"></p>
 <ul>
 <li><code>onCreate()</code>：系统会在创建片段时调用此方法。您应该在实现内初始化您想在片段暂停或停止后恢复时保留的必需片段组件。</li>
 <li><code>onCreateView()</code>：系统会在片段首次绘制其用户界面时调用此方法。要想为您的片段绘制UI，您从此方法中返回的View必须是片段布局的根视图。如果片段未提供UI，您可以返回<code>null</code>。</li>
 <li><code>onPause()</code>：系统将此方法作为用户离开片段的第一个信号（但并不总是意味着此片段会被销毁）进行调用。您通常应该在此方法内确认在当前用户会话结束后仍然有效的任何更改（因为用户可能不会返回）。</li>
 </ul>
-<h2 id="36-Activity生命周期对片段生命周期的影响"><a href="#36-Activity生命周期对片段生命周期的影响" class="headerlink" title="36. Activity生命周期对片段生命周期的影响"></a>36. Activity生命周期对片段生命周期的影响</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/images/activity_fragment_lifecycle.png" alt="activity fragment lifecycle"></p>
+<h2 id="36-Activity生命周期对片段生命周期的影响"><a href="#36-Activity生命周期对片段生命周期的影响" class="headerlink" title="36. Activity生命周期对片段生命周期的影响"></a>36. Activity生命周期对片段生命周期的影响</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/activity_fragment_lifecycle.png" alt="activity fragment lifecycle"></p>
 <p>片段所在的Activity的生命周期会直接影响片段的生命周期，其表现为，Activity的每次生命周期回调都会引发每个片段的类似回调。例如，当Activity收到<code>onPause()</code>时，Activity中的每个片段也会收到<code>onPause()</code>。</p>
 <p>不过，片段还有几个额外的生命周期回调，用于处理与Activity的唯一交互，以执行构建和销毁片段UI等操作。这些额外的回调方法是：</p>
 <ul>
@@ -918,7 +918,7 @@
 <li>如果<code>return fasle</code>，则表示不响应事件，那么该事件将会不断向上层View的<code>onTouchEvent()</code>方法传递，直到某个View的<code>onTouchEvent()</code>方法返回<code>true</code>，如果到了最顶层View还是返回<code>false</code>，那么认为该事件不消耗，则在同一个事件系列中，当前View无法再次接收到事件，该事件会交由Activity的<code>onTouchEvent()</code>进行处理。</li>
 <li>如果<code>return super.dispatchTouchEvent(ev)</code>，则表示不响应事件，结果与<code>return false</code>一样。</li>
 </ul>
-<p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/images/touch_eventbus.gif" alt="touch eventbus"></p>
+<p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/touch_eventbus.gif" alt="touch eventbus"></p>
 <ul>
 <li>如果ViewGroup找到了能够处理该事件的View，则直接交给子View处理，自己的<code>onTouchEvent()</code>不会被触发。</li>
 <li>可以通过复写<code>onInterceptTouchEvent(ev)</code>方法，拦截子View的事件（即<code>return true</code>），把事件交给自己处理，则会执行自己对应的<code>onTouchEvent()</code>方法。</li>
@@ -931,7 +931,7 @@
 </ul>
 <p>参考：<a href="https://github.com/Mr-YangCheng/ForAndroidInterview/blob/master/android/Android%20View%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6%E6%BA%90%E7%A0%81%E5%88%86%E6%9E%90.md" target="_blank" rel="noopener">ForAndroidInterview/Android View事件分发机制源码分析.md at master · Mr-YangCheng/ForAndroidInterview</a></p>
 <p>参考：<a href="https://www.cnblogs.com/sunzn/archive/2013/05/10/3064129.html" target="_blank" rel="noopener">Android 编程下 Touch 事件的分发和消费机制 - sunzn - 博客园</a></p>
-<h2 id="38-Android系统启动过程"><a href="#38-Android系统启动过程" class="headerlink" title="38. Android系统启动过程"></a>38. Android系统启动过程</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/images/android_boot_process.png" alt="android boot process"></p>
+<h2 id="38-Android系统启动过程"><a href="#38-Android系统启动过程" class="headerlink" title="38. Android系统启动过程"></a>38. Android系统启动过程</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/android_boot_process.png" alt="android boot process"></p>
 <h3 id="38-1-Boot-ROM"><a href="#38-1-Boot-ROM" class="headerlink" title="38.1. Boot ROM"></a>38.1. Boot ROM</h3><p>Android设备上电后，首先会从处理器片上ROM的启动引导代码开始执行，片上ROM会寻找Bootloader代码，并加载到内存。</p>
 <h3 id="38-2-Boot-Loader"><a href="#38-2-Boot-Loader" class="headerlink" title="38.2. Boot Loader"></a>38.2. Boot Loader</h3><p>BootLoader是在操作系统内核运行之前运行。可以初始化硬件设备、建立内存空间映射图，从而将系统的软硬件环境带到一个合适状态，以便为最终调用操作系统内核准备好正确的环境。</p>
 <h3 id="38-3-Kernel"><a href="#38-3-Kernel" class="headerlink" title="38.3. Kernel"></a>38.3. Kernel</h3><p>Android内核启动时，会设置缓存、被保护存储器、计划列表，加载驱动。当内核完成系统设置，它首先在系统文件中寻找”init”文件，然后启动root进程或者系统的第一个进程。</p>
@@ -966,8 +966,8 @@
 <p>在屏幕密度为160dpi，1dp = 1px，1pt = 160/72sp，1pt = 1/72in。当屏幕密度为240dpi时，1dp = 1.5px。</p>
 <p>参考：<a href="http://stackoverflow.com/questions/8478882/how-do-dp-dip-dpi-ppi-pixels-and-inches-relate" target="_blank" rel="noopener">mobile - How do dp, dip, dpi, ppi, pixels and inches relate? - Stack Overflow</a></p>
 <h2 id="41-长度和字体的推荐单位"><a href="#41-长度和字体的推荐单位" class="headerlink" title="41. 长度和字体的推荐单位"></a>41. 长度和字体的推荐单位</h2><p>长度推荐dp（Density-independent Pixels），字号大小推荐sp（Scale-independent Pixels）。</p>
-<h2 id="42-Android-View绘制流程"><a href="#42-Android-View绘制流程" class="headerlink" title="42. Android View绘制流程"></a>42. Android View绘制流程</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/images/android_draw_view_flow.png" alt="android_draw_view_flow"></p>
-<p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/images/android_draw_view_chain.png" alt="android_draw_view_chain"></p>
+<h2 id="42-Android-View绘制流程"><a href="#42-Android-View绘制流程" class="headerlink" title="42. Android View绘制流程"></a>42. Android View绘制流程</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/android_draw_view_flow.png" alt="android_draw_view_flow"></p>
+<p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/android_draw_view_chain.png" alt="android_draw_view_chain"></p>
 <p>参考：<a href="https://github.com/android-cn/android-open-project-analysis/tree/master/tech/viewdrawflow" target="_blank" rel="noopener">android-open-project-analysis/tech/viewdrawflow at master · android-cn/android-open-project-analysis</a></p>
 <p>参考：<a href="http://vincgao.com/2016/02/android-layout/" target="_blank" rel="noopener">Android Layout绘制</a></p>
 <h2 id="43-ListView优化"><a href="#43-ListView优化" class="headerlink" title="43. ListView优化"></a>43. ListView优化</h2><ul>
@@ -978,8 +978,8 @@
 <li>在快速滑动时不要加载图片</li>
 <li>使用RecyclerView</li>
 </ul>
-<h2 id="44-Android-Binder机制"><a href="#44-Android-Binder机制" class="headerlink" title="44. Android Binder机制"></a>44. Android Binder机制</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/images/binder_architecture.jpg" alt="binder architecture"></p>
-<p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/images/binder_architecture_2.jpg" alt="binder architecture 2"></p>
+<h2 id="44-Android-Binder机制"><a href="#44-Android-Binder机制" class="headerlink" title="44. Android Binder机制"></a>44. Android Binder机制</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/binder_architecture.jpg" alt="binder architecture"></p>
+<p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/binder_architecture_2.jpg" alt="binder architecture 2"></p>
 <ol>
 <li>Server进程启动之后，会进入中断等待状态，等待Client的请求。</li>
 <li>当Client需要和Server通信时，会将请求发送给Binder驱动。</li>
@@ -1262,7 +1262,7 @@
 <li>声明应用所需的最低Android API级别。</li>
 <li>列出应用必须链接到的库。</li>
 </ul>
-<h2 id="79-用户界面如何构成？"><a href="#79-用户界面如何构成？" class="headerlink" title="79. 用户界面如何构成？"></a>79. 用户界面如何构成？</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/images/viewgroup.png" alt="View Group"></p>
+<h2 id="79-用户界面如何构成？"><a href="#79-用户界面如何构成？" class="headerlink" title="79. 用户界面如何构成？"></a>79. 用户界面如何构成？</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/viewgroup.png" alt="View Group"></p>
 <p>Android应用中的所有用户界面元素都是使用View和ViewGroup对象构建而成。View对象用于在屏幕上绘制可供用户交互的内容。ViewGroup对象用于储存其他View（和ViewGroup）对象，以便定义界面的布局。</p>
 <p>每个应用组件的用户界面都是使用View和ViewGroup对象的层次结构定义的。每个视图组都是一个用于组织子视图的不可见容器，而子视图可以是输入控件或其他可绘制某一UI部分的小部件。 </p>
 <h2 id="80-为什么要回收Bitmap的内存"><a href="#80-为什么要回收Bitmap的内存" class="headerlink" title="80. 为什么要回收Bitmap的内存"></a>80. 为什么要回收Bitmap的内存</h2><p>Bitmap的实例化只能通过BitmapFactory，而Bitmap对象的生成则是通过JNI调用，所以Bitmap包含Java和C两部分内存。Java部分内存可以通过虚拟机自动回收，但C部分则需要手动释放，所以需要显式调用<code>recycle()</code>方法来释放。</p>
@@ -1284,8 +1284,8 @@
 <p>Uncaught异常发生时会终止线程，此时，系统便会通知UncaughtExceptionHandler，调用<code>uncaughtException()</code>函数。如果该handler没有被显式设置，则会调用对应线程组的默认handler。</p>
 <p>如果要捕获该异常，必须实现UncaughtExceptionHandler，并通过<code>public static void setDefaultUncaughtExceptionHandler(Thread.UncaughtExceptionHandler handler)</code>进行设置。</p>
 <h3 id="84-2-Native崩溃捕获"><a href="#84-2-Native崩溃捕获" class="headerlink" title="84.2. Native崩溃捕获"></a>84.2. Native崩溃捕获</h3><p>对Native代码的崩溃，可以通过调用<code>int sigaction(int signum,const struct sigaction *act,struct sigaction *oldact))</code>注册信号处理函数来完成。</p>
-<h2 id="85-Android-APP构建流程"><a href="#85-Android-APP构建流程" class="headerlink" title="85. Android APP构建流程"></a>85. Android APP构建流程</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/images/build_process.png" alt="Build Process"></p>
-<p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/images/build_process_2.png" alt="Build Process"></p>
+<h2 id="85-Android-APP构建流程"><a href="#85-Android-APP构建流程" class="headerlink" title="85. Android APP构建流程"></a>85. Android APP构建流程</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/build_process.png" alt="Build Process"></p>
+<p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/build_process_2.png" alt="Build Process"></p>
 <p>典型的Android APP构建流程：</p>
 <ol>
 <li>Java编译器对工程本身的java代码进行编译，这些java代码有三个来源：app的源代码，由资源文件生成的R文件（aapt工具），以及有aidl文件生成的java接口文件（aidl工具）。产出为.class文件。</li>
@@ -1293,7 +1293,7 @@
 <li>apkbuilder工具将.dex文件和编译后的资源文件生成未经签名对齐的apk文件。这里编译后的资源文件包括两部分，一是由aapt编译产生的编译后的资源文件，二是依赖的三方库里的资源文件。产出为未经签名的.apk文件。</li>
 <li>分别由Jarsigner和zipalign对apk文件进行签名和对齐，生成最终的apk文件。</li>
 </ol>
-<h2 id="86-class文件与-dex文件的区别"><a href="#86-class文件与-dex文件的区别" class="headerlink" title="86. class文件与.dex文件的区别"></a>86. class文件与.dex文件的区别</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/images/class_vs_dex.png" alt="class vs dex"></p>
+<h2 id="86-class文件与-dex文件的区别"><a href="#86-class文件与-dex文件的区别" class="headerlink" title="86. class文件与.dex文件的区别"></a>86. class文件与.dex文件的区别</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/class_vs_dex.png" alt="class vs dex"></p>
 <h2 id="87-65535问题"><a href="#87-65535问题" class="headerlink" title="87. 65535问题"></a>87. 65535问题</h2><h3 id="87-1-原因"><a href="#87-1-原因" class="headerlink" title="87.1. 原因"></a>87.1. 原因</h3><p>单个dex文件中，method个数采用使用原生类型short来索引，即2个字节最多65536个method，field、class的个数也均有此限制。</p>
 <h3 id="87-2-解决方法"><a href="#87-2-解决方法" class="headerlink" title="87.2. 解决方法"></a>87.2. 解决方法</h3><p>build.gradle中配置<code>multiDexEnabled true</code>，将dex分包。</p>
 <h2 id="88-Dalvik与JVM的区别"><a href="#88-Dalvik与JVM的区别" class="headerlink" title="88. Dalvik与JVM的区别"></a>88. Dalvik与JVM的区别</h2><ul>
@@ -1311,14 +1311,14 @@
 <li>提升内存效率：专门开辟内存存放large object，因为large object移动成本太大；引入moving collector技术，将不连续的物理内存块对齐，解决内存碎片化问题。</li>
 </ul>
 <p>参考：<a href="https://source.android.com/devices/tech/dalvik/" target="_blank" rel="noopener">ART and Dalvik | Android Open Source Project</a></p>
-<h2 id="90-Android中的ClassLoader"><a href="#90-Android中的ClassLoader" class="headerlink" title="90. Android中的ClassLoader"></a>90. Android中的ClassLoader</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/images/classloader.png" alt="ClassLoader"></p>
+<h2 id="90-Android中的ClassLoader"><a href="#90-Android中的ClassLoader" class="headerlink" title="90. Android中的ClassLoader"></a>90. Android中的ClassLoader</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/classloader.png" alt="ClassLoader"></p>
 <ul>
 <li>在Android中，App安装到手机后，apk里面的class.dex中的class均是通过PathClassLoader来加载的。</li>
 <li>DexClassLoader可以用来加载SD卡上加载包含class.dex的.jar和.apk文件。</li>
 <li>DexClassLoader和PathClassLoader的基类BaseDexClassLoader查找class是通过其内部的<code>DexPathList pathList</code>来查找的。</li>
 <li>DexPathList内部有一个<code>Element[] dexElements</code>数组，其<code>findClass()</code>方法的实现就是遍历该数组，查找class，一旦找到需要的类，就直接返回，停止遍历。</li>
 </ul>
-<h2 id="91-ClassLoader方式实现热修复"><a href="#91-ClassLoader方式实现热修复" class="headerlink" title="91. ClassLoader方式实现热修复"></a>91. ClassLoader方式实现热修复</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/images/classloader_hotpatch.jpg" alt="ClassLoader Hot Patch"></p>
+<h2 id="91-ClassLoader方式实现热修复"><a href="#91-ClassLoader方式实现热修复" class="headerlink" title="91. ClassLoader方式实现热修复"></a>91. ClassLoader方式实现热修复</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/classloader_hotpatch.jpg" alt="ClassLoader Hot Patch"></p>
 <p>主要步骤：</p>
 <ol>
 <li>假设MainActivity中有一个方法<code>showMsg()</code>需要修复。</li>
@@ -1456,7 +1456,7 @@
 <p>一般的用法是对<code>mHandler</code>调用<code>obtainMessage()</code>获得Message并设置参数后通过<code>sendMessage()</code>发送出去。在<code>obtainMessage()</code>和<code>sendMessage()</code>都会设置Message的Handler为本Handler（Message的<code>target</code>变量），若需向Message传递Runnable对象，则会在Message的<code>callback</code>变量中记录。</p>
 <p><code>sendMessage()</code>最终会调用MessageQueue的<code>enqueueMessage()</code>方法，将此Message绑定到对应Looper对应的MessageQueue上。而Looper中收到Message后，会调用Message的<code>target</code>变量（即Handler）的<code>dispatchMessage()</code>方法。对于普通Message，<code>dispatchMessage()</code>又会去调用<code>handleMessage()</code>方法，而这个方法会被用户重载，所以会执行<code>mHandler</code>中指定的代码。</p>
 <p>参考：<a href="http://www.cnblogs.com/codingmyworld/archive/2011/09/12/2174255.html" target="_blank" rel="noopener">android的消息处理机制（图+源码分析）——Looper,Handler,Message - CodingMyWorld - 博客园</a></p>
-<h2 id="94-startActivity-执行流程"><a href="#94-startActivity-执行流程" class="headerlink" title="94. startActivity()执行流程"></a>94. <code>startActivity()</code>执行流程</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/images/start_activity_process.jpg" alt="Start Activity Process"></p>
+<h2 id="94-startActivity-执行流程"><a href="#94-startActivity-执行流程" class="headerlink" title="94. startActivity()执行流程"></a>94. <code>startActivity()</code>执行流程</h2><p><img src="/2018/12/31/android-kai-fa-xiang-guan-zhi-shi-zong-jie/start_activity_process.jpg" alt="Start Activity Process"></p>
 <ul>
 <li>当Activity的目标进程不存在时，会首先创建进程。</li>
 <li>Activity Manager Service（AMS）向目标进程的主线程发送<code>LAUNCH_ACTIVITY</code>，目标进程通过反射创建目标Activity，然后进入<code>onCreate()</code>生命周期。</li>
