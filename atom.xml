@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://geekerstar.github.io/"/>
-  <updated>2018-12-31T14:49:52.522Z</updated>
+  <updated>2019-01-01T11:27:35.661Z</updated>
   <id>https://geekerstar.github.io/</id>
   
   <author>
@@ -15,6 +15,172 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>写给java开发的运维笔记（中级篇）</title>
+    <link href="https://geekerstar.github.io/2019/01/01/yunwei2/"/>
+    <id>https://geekerstar.github.io/2019/01/01/yunwei2/</id>
+    <published>2019-01-01T11:26:10.718Z</published>
+    <updated>2019-01-01T11:27:35.661Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;中级篇&quot;&gt;&lt;a href=&quot;#中级篇&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="运维" scheme="https://geekerstar.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="运维" scheme="https://geekerstar.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+      <category term="java" scheme="https://geekerstar.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>写给java开发的运维笔记（初级篇）</title>
+    <link href="https://geekerstar.github.io/2019/01/01/yunwei1/"/>
+    <id>https://geekerstar.github.io/2019/01/01/yunwei1/</id>
+    <published>2019-01-01T11:20:50.090Z</published>
+    <updated>2019-01-01T11:23:28.400Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="运维" scheme="https://geekerstar.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
+    
+    
+      <category term="运维" scheme="https://geekerstar.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
+    
+      <category term="java" scheme="https://geekerstar.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux下安装、卸载Tomcat脚本</title>
+    <link href="https://geekerstar.github.io/2019/01/01/tomcat-install/"/>
+    <id>https://geekerstar.github.io/2019/01/01/tomcat-install/</id>
+    <published>2019-01-01T11:08:20.649Z</published>
+    <updated>2019-01-01T11:09:56.587Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;linux下安装Tomcat脚本&quot;&gt;&lt;a href=&quot;#linux下安装Tomcat脚本&quot; class=&quot;headerlink&quot; title=&quot;linux下安装Tomcat脚本&quot;&gt;&lt;/a&gt;linux下安装Tomcat脚本&lt;/h2&gt;&lt;pre class=&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="https://geekerstar.github.io/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="https://geekerstar.github.io/tags/linux/"/>
+    
+      <category term="tomcat" scheme="https://geekerstar.github.io/tags/tomcat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MVC框架实现篇</title>
+    <link href="https://geekerstar.github.io/2019/01/01/mvc/"/>
+    <id>https://geekerstar.github.io/2019/01/01/mvc/</id>
+    <published>2019-01-01T11:02:14.222Z</published>
+    <updated>2019-01-01T11:03:05.916Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;MVC框架实现篇&quot;&gt;&lt;a href=&quot;#MVC框架实现篇&quot; class=&quot;headerlink&quot; title=&quot;MVC框架实现篇&quot;&gt;&lt;/a&gt;MVC框架实现篇&lt;/h1&gt;&lt;h1 id=&quot;如何设计一个JavaWeb-MVC框架&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="MVC" scheme="https://geekerstar.github.io/categories/MVC/"/>
+    
+    
+      <category term="MVC" scheme="https://geekerstar.github.io/tags/MVC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用hexo搭建博客系列</title>
+    <link href="https://geekerstar.github.io/2019/01/01/hexo/"/>
+    <id>https://geekerstar.github.io/2019/01/01/hexo/</id>
+    <published>2019-01-01T10:55:03.921Z</published>
+    <updated>2019-01-01T10:56:54.066Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;使用hexo搭建博客系列&quot;&gt;&lt;a href=&quot;#使用hexo搭建博客系列&quot; class=&quot;headerlink&quot; title=&quot;使用hexo搭建博客系列&quot;&gt;&lt;/a&gt;使用hexo搭建博客系列&lt;/h2&gt;&lt;h4 id=&quot;1-分分钟部署一个Hexo环境&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="hexo" scheme="https://geekerstar.github.io/categories/hexo/"/>
+    
+    
+      <category term="hexo" scheme="https://geekerstar.github.io/tags/hexo/"/>
+    
+      <category term="博客" scheme="https://geekerstar.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IOC容器实现篇</title>
+    <link href="https://geekerstar.github.io/2019/01/01/ioc/"/>
+    <id>https://geekerstar.github.io/2019/01/01/ioc/</id>
+    <published>2019-01-01T10:48:07.166Z</published>
+    <updated>2019-01-01T10:49:15.341Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;IOC的概念&quot;&gt;&lt;a href=&quot;#IOC的概念&quot; class=&quot;headerlink&quot; title=&quot;IOC的概念&quot;&gt;&lt;/a&gt;IOC的概念&lt;/h1&gt;&lt;h2 id=&quot;什么是IOC？&quot;&gt;&lt;a href=&quot;#什么是IOC？&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="spring" scheme="https://geekerstar.github.io/categories/spring/"/>
+    
+    
+      <category term="spring" scheme="https://geekerstar.github.io/tags/spring/"/>
+    
+      <category term="ioc" scheme="https://geekerstar.github.io/tags/ioc/"/>
+    
+  </entry>
   
   <entry>
     <title>数据库知识点总结</title>
@@ -317,11 +483,11 @@
   </entry>
   
   <entry>
-    <title>SpringBoot基础</title>
-    <link href="https://geekerstar.github.io/2018/11/25/springboot-ji-chu/"/>
-    <id>https://geekerstar.github.io/2018/11/25/springboot-ji-chu/</id>
-    <published>2018-11-25T04:27:31.732Z</published>
-    <updated>2018-12-31T12:56:14.190Z</updated>
+    <title>Web服务器性能压力测试工具</title>
+    <link href="https://geekerstar.github.io/2018/12/25/web-test/"/>
+    <id>https://geekerstar.github.io/2018/12/25/web-test/</id>
+    <published>2018-12-24T22:09:04.000Z</published>
+    <updated>2019-01-01T10:44:09.446Z</updated>
     
     <summary type="html">
     
@@ -329,25 +495,27 @@
       
         
         
-          &lt;h2 id=&quot;学习目标：&quot;&gt;&lt;a href=&quot;#学习目标：&quot; class=&quot;headerlink&quot;
+          &lt;h2 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E6%B5%8B%E8%AF%95&quot;&gt;- 测试&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
         
       
     
     </summary>
     
-      <category term="springboot" scheme="https://geekerstar.github.io/categories/springboot/"/>
+      <category term="测试" scheme="https://geekerstar.github.io/categories/%E6%B5%8B%E8%AF%95/"/>
     
     
-      <category term="springboot" scheme="https://geekerstar.github.io/tags/springboot/"/>
+      <category term="测试" scheme="https://geekerstar.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
   <entry>
-    <title>《Docker环境下的前后端分离部署与运维》课程脚本</title>
-    <link href="https://geekerstar.github.io/2018/08/14/docker-qian-hou-duan-fen-chi/"/>
-    <id>https://geekerstar.github.io/2018/08/14/docker-qian-hou-duan-fen-chi/</id>
-    <published>2018-08-14T09:36:05.748Z</published>
-    <updated>2018-12-31T12:56:13.014Z</updated>
+    <title>HTTP请求报文解剖</title>
+    <link href="https://geekerstar.github.io/2018/12/25/request-message/"/>
+    <id>https://geekerstar.github.io/2018/12/25/request-message/</id>
+    <published>2018-12-24T22:09:04.000Z</published>
+    <updated>2019-01-01T10:58:26.720Z</updated>
     
     <summary type="html">
     
@@ -355,20 +523,74 @@
       
         
         
-          &lt;h2 id=&quot;Docker虚拟机常用命令&quot;&gt;&lt;a href=&quot;#Docker虚拟机常用命令&quot; class=&quot;headerlink&quot; title=&quot;Docker虚拟机常用命令&quot;&gt;&lt;/a&gt;Docker虚拟机常用命令&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;先更新软件包&lt;/p&gt;
-&lt;pre
+          &lt;h2 id=&quot;HTTP请求报文解剖&quot;&gt;&lt;a href=&quot;#HTTP请求报文解剖&quot; class=&quot;headerlink&quot;
         
       
     
     </summary>
     
-      <category term="docker" scheme="https://geekerstar.github.io/categories/docker/"/>
+      <category term="HTTP" scheme="https://geekerstar.github.io/categories/HTTP/"/>
     
     
-      <category term="docker" scheme="https://geekerstar.github.io/tags/docker/"/>
+      <category term="HTTP" scheme="https://geekerstar.github.io/tags/HTTP/"/>
     
-      <category term="前后端分离" scheme="https://geekerstar.github.io/tags/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/"/>
+  </entry>
+  
+  <entry>
+    <title>设计模式之单例模式剖析</title>
+    <link href="https://geekerstar.github.io/2018/12/25/singleton/"/>
+    <id>https://geekerstar.github.io/2018/12/25/singleton/</id>
+    <published>2018-12-24T22:09:04.000Z</published>
+    <updated>2019-01-01T10:51:08.727Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;如何正确地写出单例模式&quot;&gt;&lt;a href=&quot;#如何正确地写出单例模式&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="设计模式" scheme="https://geekerstar.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="单例模式" scheme="https://geekerstar.github.io/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="设计模式" scheme="https://geekerstar.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式之策略模式剖析</title>
+    <link href="https://geekerstar.github.io/2018/12/25/strategy/"/>
+    <id>https://geekerstar.github.io/2018/12/25/strategy/</id>
+    <published>2018-12-24T22:09:04.000Z</published>
+    <updated>2019-01-01T10:52:07.401Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;什么是策略模式&quot;&gt;&lt;a href=&quot;#什么是策略模式&quot; class=&quot;headerlink&quot; title=&quot;什么是策略模式&quot;&gt;&lt;/a&gt;什么是策略模式&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#策略模式&quot;&gt;策略模式&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="设计模式" scheme="https://geekerstar.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式" scheme="https://geekerstar.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="策略模式" scheme="https://geekerstar.github.io/tags/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
