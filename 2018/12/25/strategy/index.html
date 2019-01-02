@@ -758,17 +758,21 @@ public @interface XMLType {
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/2018/12/25/singleton/">
+                <a href="/2018/12/25/request-message/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="设计模式之单例模式剖析">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="HTTP请求报文解剖">
                         
-                        <span class="card-title">设计模式之单例模式剖析</span>
+                        <span class="card-title">HTTP请求报文解剖</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">如何正确地写出单例模式单例模式算是设计模式中最容易理解，也是最容易手写代码的模式了吧。但是其中的坑却不少，所以也常作为面试题来考。本文主要对几种单例写法的整理，并分析其优缺点。很多都是一些老生常谈的问题，但如果你不知道如何创建一个线程安全的</div>
+                    <div class="summary">HTTP请求报文解剖HTTP请求报文由3部分组成（请求行+请求头+请求体）： 
+
+下面是一个实际的请求报文： 
+
+① 是请求方法，GET和POST是最常见的HTTP方法，除此以外还包括DELETE、HEAD、OPTIONS、PUT、TRAC</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-25
@@ -777,8 +781,8 @@ public @interface XMLType {
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/设计模式/" class="post-category" target="_blank">
-                                    设计模式
+                            <a href="/categories/HTTP/" class="post-category" target="_blank">
+                                    HTTP
                                 </a>
                             
                             
@@ -788,12 +792,8 @@ public @interface XMLType {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/单例模式/" target="_blank">
-                        <span class="chip bg-color">单例模式</span>
-                    </a>
-                    
-                    <a href="/tags/设计模式/" target="_blank">
-                        <span class="chip bg-color">设计模式</span>
+                    <a href="/tags/HTTP/" target="_blank">
+                        <span class="chip bg-color">HTTP</span>
                     </a>
                     
                 </div>
@@ -805,33 +805,27 @@ public @interface XMLType {
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">下一篇</div>
             <div class="card">
-                <a href="/2018/12/25/proxy/">
+                <a href="/2018/12/25/web-test/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="设计模式之代理模式剖析">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Web服务器性能压力测试工具">
                         
-                        <span class="card-title">设计模式之代理模式剖析</span>
+                        <span class="card-title">Web服务器性能压力测试工具</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">
-代理模式定义
-静态代理
-代理模式的参与者
-代理模式的实现思路
-静态代理的实例
+                    <div class="summary">目录
+- 测试
+目录
+http_load
+webbench
+ab
+siege
 
 
-动态代理
-JDK动态代理源码分析（JDK7）
-代理对象是如何创建出来的？
-是谁调用了Invoke?
 
-
-参考文献
-
-代理模式定义维基百科上是这样描述代理模式</div>
+http_load程序非常小，解压后也不到100Khttp_load以并行复用的方式运行，用以测试web服务器的吞吐量与负载。但是它不同于大多数压力测试工具</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-25
@@ -840,8 +834,8 @@ JDK动态代理源码分析（JDK7）
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/设计模式/" class="post-category" target="_blank">
-                                    设计模式
+                            <a href="/categories/测试/" class="post-category" target="_blank">
+                                    测试
                                 </a>
                             
                             
@@ -851,12 +845,8 @@ JDK动态代理源码分析（JDK7）
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/设计模式/" target="_blank">
-                        <span class="chip bg-color">设计模式</span>
-                    </a>
-                    
-                    <a href="/tags/代理模式/" target="_blank">
-                        <span class="chip bg-color">代理模式</span>
+                    <a href="/tags/测试/" target="_blank">
+                        <span class="chip bg-color">测试</span>
                     </a>
                     
                 </div>

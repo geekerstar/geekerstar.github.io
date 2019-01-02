@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://geekerstar.github.io/"/>
-  <updated>2019-01-01T11:27:35.661Z</updated>
+  <updated>2019-01-02T12:04:16.335Z</updated>
   <id>https://geekerstar.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>操作系统学习总结</title>
+    <link href="https://geekerstar.github.io/2019/01/02/cao-zuo-xi-tong-xue-xi-zong-jie/"/>
+    <id>https://geekerstar.github.io/2019/01/02/cao-zuo-xi-tong-xue-xi-zong-jie/</id>
+    <published>2019-01-02T14:33:03.000Z</published>
+    <updated>2019-01-02T12:04:16.335Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;##这部分内容主要是基于一些关于操作系统基础的学习总结，内容不全面，只讲述了其中的一小部分，后续会再补充，如有错误，还请见谅。&lt;/p&gt;
+&lt;h1 id=&quot;操作系统&quot;&gt;&lt;a href=&quot;#操作系统&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="操作系统" scheme="https://geekerstar.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="操作系统" scheme="https://geekerstar.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>写给java开发的运维笔记（中级篇）</title>
@@ -38,9 +65,9 @@
       <category term="运维" scheme="https://geekerstar.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
     
     
-      <category term="运维" scheme="https://geekerstar.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
-    
       <category term="java" scheme="https://geekerstar.github.io/tags/java/"/>
+    
+      <category term="运维" scheme="https://geekerstar.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
     
   </entry>
   
@@ -66,9 +93,9 @@
       <category term="运维" scheme="https://geekerstar.github.io/categories/%E8%BF%90%E7%BB%B4/"/>
     
     
-      <category term="运维" scheme="https://geekerstar.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
-    
       <category term="java" scheme="https://geekerstar.github.io/tags/java/"/>
+    
+      <category term="运维" scheme="https://geekerstar.github.io/tags/%E8%BF%90%E7%BB%B4/"/>
     
   </entry>
   
@@ -483,34 +510,6 @@
   </entry>
   
   <entry>
-    <title>Web服务器性能压力测试工具</title>
-    <link href="https://geekerstar.github.io/2018/12/25/web-test/"/>
-    <id>https://geekerstar.github.io/2018/12/25/web-test/</id>
-    <published>2018-12-24T22:09:04.000Z</published>
-    <updated>2019-01-01T10:44:09.446Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#%E6%B5%8B%E8%AF%95&quot;&gt;- 测试&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="测试" scheme="https://geekerstar.github.io/categories/%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="测试" scheme="https://geekerstar.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>HTTP请求报文解剖</title>
     <link href="https://geekerstar.github.io/2018/12/25/request-message/"/>
     <id>https://geekerstar.github.io/2018/12/25/request-message/</id>
@@ -533,34 +532,6 @@
     
     
       <category term="HTTP" scheme="https://geekerstar.github.io/tags/HTTP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式之单例模式剖析</title>
-    <link href="https://geekerstar.github.io/2018/12/25/singleton/"/>
-    <id>https://geekerstar.github.io/2018/12/25/singleton/</id>
-    <published>2018-12-24T22:09:04.000Z</published>
-    <updated>2019-01-01T10:51:08.727Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;如何正确地写出单例模式&quot;&gt;&lt;a href=&quot;#如何正确地写出单例模式&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="设计模式" scheme="https://geekerstar.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-      <category term="单例模式" scheme="https://geekerstar.github.io/tags/%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/"/>
-    
-      <category term="设计模式" scheme="https://geekerstar.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -591,6 +562,34 @@
       <category term="设计模式" scheme="https://geekerstar.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
       <category term="策略模式" scheme="https://geekerstar.github.io/tags/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Web服务器性能压力测试工具</title>
+    <link href="https://geekerstar.github.io/2018/12/25/web-test/"/>
+    <id>https://geekerstar.github.io/2018/12/25/web-test/</id>
+    <published>2018-12-24T22:09:04.000Z</published>
+    <updated>2019-01-01T10:44:09.446Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E6%B5%8B%E8%AF%95&quot;&gt;- 测试&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="测试" scheme="https://geekerstar.github.io/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="测试" scheme="https://geekerstar.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
