@@ -44,6 +44,34 @@
   </entry>
   
   <entry>
+    <title>《深入理解ES6》笔记</title>
+    <link href="https://geekerstar.github.io/2019/01/02/diveines6/"/>
+    <id>https://geekerstar.github.io/2019/01/02/diveines6/</id>
+    <published>2019-01-02T12:10:03.076Z</published>
+    <updated>2019-01-02T12:21:33.729Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;1、《深入理解ES6》笔记——块级作用域绑定&quot;&gt;&lt;a href=&quot;#1、《深入理解ES6》笔记——块级作用域绑定&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="javascript" scheme="https://geekerstar.github.io/categories/javascript/"/>
+    
+    
+      <category term="javascript" scheme="https://geekerstar.github.io/tags/javascript/"/>
+    
+      <category term="ES6" scheme="https://geekerstar.github.io/tags/ES6/"/>
+    
+  </entry>
+  
+  <entry>
     <title>写给java开发的运维笔记（中级篇）</title>
     <link href="https://geekerstar.github.io/2019/01/01/yunwei2/"/>
     <id>https://geekerstar.github.io/2019/01/01/yunwei2/</id>
@@ -510,37 +538,33 @@
   </entry>
   
   <entry>
-    <title>HTTP请求报文解剖</title>
-    <link href="https://geekerstar.github.io/2018/12/25/request-message/"/>
-    <id>https://geekerstar.github.io/2018/12/25/request-message/</id>
+    <title>Java8简明指南</title>
+    <link href="https://geekerstar.github.io/2018/12/25/java8-guide/"/>
+    <id>https://geekerstar.github.io/2018/12/25/java8-guide/</id>
     <published>2018-12-24T22:09:04.000Z</published>
-    <updated>2019-01-01T10:58:26.720Z</updated>
+    <updated>2019-01-01T10:44:06.406Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h2 id=&quot;HTTP请求报文解剖&quot;&gt;&lt;a href=&quot;#HTTP请求报文解剖&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h2 id=&quot;Java8简明指南&quot;&gt;&lt;a href=&quot;#Java8简明指南&quot; class=&quot;headerlink&quot; title=&quot;Java8简明指南&quot;&gt;&lt;/a&gt;Java8简明指南&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;欢迎来到Java8简明指南。本教程将一步一步指导你通过所有新语言特性。由短而简单的代码示例,带你了解如何使用默认接口方法,lambda表达式,方法引用和可重复注解。本文的最后你会熟悉最新的API的变化如Stream,Fcuntional,Map API扩展和新的日期API。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
-      <category term="HTTP" scheme="https://geekerstar.github.io/categories/HTTP/"/>
+      <category term="java" scheme="https://geekerstar.github.io/categories/java/"/>
     
     
-      <category term="HTTP" scheme="https://geekerstar.github.io/tags/HTTP/"/>
+      <category term="java8" scheme="https://geekerstar.github.io/tags/java8/"/>
     
   </entry>
   
   <entry>
-    <title>设计模式之策略模式剖析</title>
-    <link href="https://geekerstar.github.io/2018/12/25/strategy/"/>
-    <id>https://geekerstar.github.io/2018/12/25/strategy/</id>
+    <title>Git简明指南</title>
+    <link href="https://geekerstar.github.io/2018/12/25/guide/"/>
+    <id>https://geekerstar.github.io/2018/12/25/guide/</id>
     <published>2018-12-24T22:09:04.000Z</published>
-    <updated>2019-01-01T10:52:07.401Z</updated>
+    <updated>2019-01-01T10:52:50.210Z</updated>
     
     <summary type="html">
     
@@ -548,48 +572,17 @@
       
         
         
-          &lt;h1 id=&quot;什么是策略模式&quot;&gt;&lt;a href=&quot;#什么是策略模式&quot; class=&quot;headerlink&quot; title=&quot;什么是策略模式&quot;&gt;&lt;/a&gt;什么是策略模式&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#策略模式&quot;&gt;策略模式&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a
+          &lt;h1 id=&quot;git-简明指南&quot;&gt;&lt;a href=&quot;#git-简明指南&quot; class=&quot;headerlink&quot; title=&quot;git - 简明指南&quot;&gt;&lt;/a&gt;git - 简明指南&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;助你入门 git 的简明指南，木有高深内容
         
       
     
     </summary>
     
-      <category term="设计模式" scheme="https://geekerstar.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+      <category term="git" scheme="https://geekerstar.github.io/categories/git/"/>
     
     
-      <category term="设计模式" scheme="https://geekerstar.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-      <category term="策略模式" scheme="https://geekerstar.github.io/tags/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Web服务器性能压力测试工具</title>
-    <link href="https://geekerstar.github.io/2018/12/25/web-test/"/>
-    <id>https://geekerstar.github.io/2018/12/25/web-test/</id>
-    <published>2018-12-24T22:09:04.000Z</published>
-    <updated>2019-01-01T10:44:09.446Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#%E6%B5%8B%E8%AF%95&quot;&gt;- 测试&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="测试" scheme="https://geekerstar.github.io/categories/%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="测试" scheme="https://geekerstar.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
+      <category term="git" scheme="https://geekerstar.github.io/tags/git/"/>
     
   </entry>
   
