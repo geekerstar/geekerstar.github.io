@@ -103,11 +103,11 @@
   </entry>
   
   <entry>
-    <title>计算机网络知识总结</title>
-    <link href="https://geekerstar.github.io/2019/01/02/ji-suan-ji-wang-luo-zhi-shi-zong-jie/"/>
-    <id>https://geekerstar.github.io/2019/01/02/ji-suan-ji-wang-luo-zhi-shi-zong-jie/</id>
+    <title>操作系统知识点总结</title>
+    <link href="https://geekerstar.github.io/2019/01/02/cao-zuo-xi-tong-zhi-shi-dian-zong-jie/"/>
+    <id>https://geekerstar.github.io/2019/01/02/cao-zuo-xi-tong-zhi-shi-dian-zong-jie/</id>
     <published>2019-01-02T14:32:57.000Z</published>
-    <updated>2019-01-02T12:44:53.203Z</updated>
+    <updated>2019-01-02T12:44:29.591Z</updated>
     
     <summary type="html">
     
@@ -117,9 +117,9 @@
         
           &lt;!-- TOC --&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#1-计算机网络分层体系结构&quot;&gt;1. 计算机网络分层体系结构&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#2-数据进入协议栈时的封装&quot;&gt;2. 数据进入协议栈时的封装&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a
+&lt;li&gt;&lt;a href=&quot;#1-进程间通信方式&quot;&gt;1. 进程间通信方式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-操作系统的特征&quot;&gt;2. 操作系统的特征&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#3-进程的组成&quot;&gt;3.
         
       
     
@@ -128,16 +128,16 @@
       <category term="计算机基础" scheme="https://geekerstar.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="网络" scheme="https://geekerstar.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
+      <category term="操作系统" scheme="https://geekerstar.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
   <entry>
-    <title>零散知识</title>
-    <link href="https://geekerstar.github.io/2019/01/02/ling-san-zhi-shi/"/>
-    <id>https://geekerstar.github.io/2019/01/02/ling-san-zhi-shi/</id>
+    <title>数据库知识点总结</title>
+    <link href="https://geekerstar.github.io/2019/01/02/shu-ju-ku-zhi-shi-dian-zong-jie/"/>
+    <id>https://geekerstar.github.io/2019/01/02/shu-ju-ku-zhi-shi-dian-zong-jie/</id>
     <published>2019-01-02T14:32:57.000Z</published>
-    <updated>2019-01-02T12:45:13.298Z</updated>
+    <updated>2019-01-02T12:44:33.971Z</updated>
     
     <summary type="html">
     
@@ -147,20 +147,19 @@
         
           &lt;!-- TOC --&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#1-xml和json的区别&quot;&gt;1. XML和JSON的区别&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#11-xml&quot;&gt;1.1. XML&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#12-json&quot;&gt;1.2.
+&lt;li&gt;&lt;a href=&quot;#1-范式&quot;&gt;1. 范式&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#11-1nf&quot;&gt;1.1. 1NF&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#12-2nf&quot;&gt;1.2. 2NF&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
         
       
     
     </summary>
     
-      <category term="其他" scheme="https://geekerstar.github.io/categories/%E5%85%B6%E4%BB%96/"/>
+      <category term="数据库" scheme="https://geekerstar.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
     
-      <category term="xml" scheme="https://geekerstar.github.io/tags/xml/"/>
-    
-      <category term="json" scheme="https://geekerstar.github.io/tags/json/"/>
+      <category term="数据库" scheme="https://geekerstar.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
@@ -197,11 +196,11 @@
   </entry>
   
   <entry>
-    <title>数据库知识点总结</title>
-    <link href="https://geekerstar.github.io/2019/01/02/shu-ju-ku-zhi-shi-dian-zong-jie/"/>
-    <id>https://geekerstar.github.io/2019/01/02/shu-ju-ku-zhi-shi-dian-zong-jie/</id>
+    <title>零散知识</title>
+    <link href="https://geekerstar.github.io/2019/01/02/ling-san-zhi-shi/"/>
+    <id>https://geekerstar.github.io/2019/01/02/ling-san-zhi-shi/</id>
     <published>2019-01-02T14:32:57.000Z</published>
-    <updated>2019-01-02T12:44:33.971Z</updated>
+    <updated>2019-01-02T12:45:13.298Z</updated>
     
     <summary type="html">
     
@@ -211,28 +210,29 @@
         
           &lt;!-- TOC --&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#1-范式&quot;&gt;1. 范式&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#11-1nf&quot;&gt;1.1. 1NF&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#12-2nf&quot;&gt;1.2. 2NF&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a
+&lt;li&gt;&lt;a href=&quot;#1-xml和json的区别&quot;&gt;1. XML和JSON的区别&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#11-xml&quot;&gt;1.1. XML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#12-json&quot;&gt;1.2.
         
       
     
     </summary>
     
-      <category term="数据库" scheme="https://geekerstar.github.io/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="其他" scheme="https://geekerstar.github.io/categories/%E5%85%B6%E4%BB%96/"/>
     
     
-      <category term="数据库" scheme="https://geekerstar.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+      <category term="xml" scheme="https://geekerstar.github.io/tags/xml/"/>
+    
+      <category term="json" scheme="https://geekerstar.github.io/tags/json/"/>
     
   </entry>
   
   <entry>
-    <title>操作系统知识点总结</title>
-    <link href="https://geekerstar.github.io/2019/01/02/cao-zuo-xi-tong-zhi-shi-dian-zong-jie/"/>
-    <id>https://geekerstar.github.io/2019/01/02/cao-zuo-xi-tong-zhi-shi-dian-zong-jie/</id>
+    <title>计算机网络知识总结</title>
+    <link href="https://geekerstar.github.io/2019/01/02/ji-suan-ji-wang-luo-zhi-shi-zong-jie/"/>
+    <id>https://geekerstar.github.io/2019/01/02/ji-suan-ji-wang-luo-zhi-shi-zong-jie/</id>
     <published>2019-01-02T14:32:57.000Z</published>
-    <updated>2019-01-02T12:44:29.591Z</updated>
+    <updated>2019-01-02T12:44:53.203Z</updated>
     
     <summary type="html">
     
@@ -242,9 +242,9 @@
         
           &lt;!-- TOC --&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#1-进程间通信方式&quot;&gt;1. 进程间通信方式&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#2-操作系统的特征&quot;&gt;2. 操作系统的特征&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#3-进程的组成&quot;&gt;3.
+&lt;li&gt;&lt;a href=&quot;#1-计算机网络分层体系结构&quot;&gt;1. 计算机网络分层体系结构&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-数据进入协议栈时的封装&quot;&gt;2. 数据进入协议栈时的封装&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
         
       
     
@@ -253,7 +253,7 @@
       <category term="计算机基础" scheme="https://geekerstar.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="操作系统" scheme="https://geekerstar.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+      <category term="网络" scheme="https://geekerstar.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
@@ -314,34 +314,6 @@
   </entry>
   
   <entry>
-    <title>Web服务器性能压力测试工具</title>
-    <link href="https://geekerstar.github.io/2019/01/01/web-test/"/>
-    <id>https://geekerstar.github.io/2019/01/01/web-test/</id>
-    <published>2019-01-01T14:32:57.000Z</published>
-    <updated>2019-01-02T12:43:08.924Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#%E6%B5%8B%E8%AF%95&quot;&gt;- 测试&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="测试" scheme="https://geekerstar.github.io/categories/%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="测试" scheme="https://geekerstar.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>写给java开发的运维笔记（初级篇）</title>
     <link href="https://geekerstar.github.io/2019/01/01/yunwei1/"/>
     <id>https://geekerstar.github.io/2019/01/01/yunwei1/</id>
@@ -398,6 +370,34 @@
   </entry>
   
   <entry>
+    <title>Web服务器性能压力测试工具</title>
+    <link href="https://geekerstar.github.io/2019/01/01/web-test/"/>
+    <id>https://geekerstar.github.io/2019/01/01/web-test/</id>
+    <published>2019-01-01T14:32:57.000Z</published>
+    <updated>2019-01-02T12:43:08.924Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E6%B5%8B%E8%AF%95&quot;&gt;- 测试&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="测试" scheme="https://geekerstar.github.io/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="测试" scheme="https://geekerstar.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>设计模式之策略模式剖析</title>
     <link href="https://geekerstar.github.io/2018/12/31/strategy/"/>
     <id>https://geekerstar.github.io/2018/12/31/strategy/</id>
@@ -428,32 +428,6 @@
   </entry>
   
   <entry>
-    <title>SpringBoot基础</title>
-    <link href="https://geekerstar.github.io/2018/12/31/springboot-ji-chu/"/>
-    <id>https://geekerstar.github.io/2018/12/31/springboot-ji-chu/</id>
-    <published>2018-12-31T14:32:57.000Z</published>
-    <updated>2019-01-02T12:42:41.672Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;学习目标：&quot;&gt;&lt;a href=&quot;#学习目标：&quot; class=&quot;headerlink&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="springboot" scheme="https://geekerstar.github.io/categories/springboot/"/>
-    
-    
-      <category term="springboot" scheme="https://geekerstar.github.io/tags/springboot/"/>
-    
-  </entry>
-  
-  <entry>
     <title>HTTP请求报文解剖</title>
     <link href="https://geekerstar.github.io/2018/12/31/request-message/"/>
     <id>https://geekerstar.github.io/2018/12/31/request-message/</id>
@@ -476,6 +450,32 @@
     
     
       <category term="HTTP" scheme="https://geekerstar.github.io/tags/HTTP/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringBoot基础</title>
+    <link href="https://geekerstar.github.io/2018/12/31/springboot-ji-chu/"/>
+    <id>https://geekerstar.github.io/2018/12/31/springboot-ji-chu/</id>
+    <published>2018-12-31T14:32:57.000Z</published>
+    <updated>2019-01-02T12:42:41.672Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;学习目标：&quot;&gt;&lt;a href=&quot;#学习目标：&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="springboot" scheme="https://geekerstar.github.io/categories/springboot/"/>
+    
+    
+      <category term="springboot" scheme="https://geekerstar.github.io/tags/springboot/"/>
     
   </entry>
   
