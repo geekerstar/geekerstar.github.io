@@ -1,0 +1,893 @@
+<!DOCTYPE HTML>
+<html lang="CN">
+<head>
+    
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Java网络编程与NIO学习总结, 极客文库">
+    <meta name="description" content="Socket编程socket是操作系统提供的网络编程接口，他封装了对于TCP/IP协议栈的支持，用于进程间的通信，当有连接接入主机以后，操作系统自动为其分配一个socket套接字，套接字绑定着一个IP与端口号。通过socket接口，可以获取">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>Java网络编程与NIO学习总结 | 极客文库-知识库</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">极客文库-知识库</span>
+                    </a>
+                </div>
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>主页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友链</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">极客文库-知识库</div>
+        <div class="logo-desc">
+            
+            汇总计算机相关领域知识、文章及教程，认准域名：https://zhishi.jikewenku.com
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                主页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友链
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/geekerstar" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+    <div class="social-link"><a href="https://github.com/geekerstar" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="https://weibo.com/247507792" class="tooltipped" target="_blank" data-tooltip="微博联系我" data-position="top" data-delay="50">
+    <i class="fa fa-weibo"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 247507792" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+        <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/geekerstar" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+</header>
+
+
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        Java网络编程与NIO学习总结
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1,
+    #articleContent h2,
+    #articleContent h3,
+    #articleContent h4,
+    #articleContent h5,
+    #articleContent h6 {
+        padding-top: 76px;
+        margin-top: -76px;
+    }
+
+    #articleContent h1 {
+        line-height: 3.5rem;
+    }
+
+    #articleContent h2 {
+        line-height: 3.2rem;
+    }
+
+    #articleContent h3 {
+        line-height: 2.8rem;
+    }
+
+    #articleContent h4 {
+        line-height: 2.5rem;
+    }
+
+    #articleContent h5 {
+        line-height: 2.2rem;
+    }
+
+    #articleContent h6 {
+        line-height: 1.9rem;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/NIO/" target="_blank">
+                    <span class="chip bg-color">NIO</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/NIO/" class="post-category" target="_blank">
+                        NIO
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2018-12-27
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="Socket编程"><a href="#Socket编程" class="headerlink" title="Socket编程"></a>Socket编程</h2><p>socket是操作系统提供的网络编程接口，他封装了对于TCP/IP协议栈的支持，用于进程间的通信，当有连接接入主机以后，操作系统自动为其分配一个socket套接字，套接字绑定着一个IP与端口号。通过socket接口，可以获取tcp连接的输入流和输出流，并且通过他们进行读取和写入此操作。</p>
+<p>Java提供了net包用于socket编程，同时支持像Inetaddress，URL等工具类，使用socket绑定一个endpoint（ip+端口号），可以用于客户端的请求处理和发送，使用serversocket绑定本地ip和端口号，可以用于服务端接收TCP请求。</p>
+<h2 id="客户端，服务端的线程模型"><a href="#客户端，服务端的线程模型" class="headerlink" title="客户端，服务端的线程模型"></a>客户端，服务端的线程模型</h2><p>一般客户端使用单线程模型即可，当有数据到来时启动线程读取，需要写入数据时开启线程进行数据写入。</p>
+<p>服务端一般使用多线程模型，一个线程负责接收tcp连接请求，每当接收到请求后开启一个线程处理它的读写请求。</p>
+<p>udp的客户端和服务端就比较简单了，由于udp数据报长度是确定的，只需要写入一个固定的缓存和读取一个固定的缓存空间即可。</p>
+<p>一般通过DatagramPacket包装一个udp数据报，然后通过DatagramSocket发送</p>
+<h2 id="IO模型"><a href="#IO模型" class="headerlink" title="IO模型"></a>IO模型</h2><p>上述的socket在处理IO请求时使用的是阻塞模型。</p>
+<p>于是我们还是得来探讨一下IO模型。</p>
+<p>一般认为，应用程序处理IO请求需要将内核缓存区中的数据拷贝到用户缓冲区。这个步骤可以通过系统调用来完成，而用户程序处理IO请求的时候，需要先检查用户缓冲区是否准备好了数据，这个操作是系统调用recevfrom，如果数据没有准备好，默认会阻塞调用该方法的线程。</p>
+<p>这样就导致了线程处理IO请求需要频繁进行阻塞，特别是并发量大的时候，线程切换的开销巨大。</p>
+<p>一般认为有几种IO模型</p>
+<p>1 阻塞IO ：就是线程会阻塞在系统调用recevfrom上，并且等待数据准备就绪以后才会返回。</p>
+<p>2 非阻塞IO : 不阻塞在系统调用recevfrom，而是通过自旋忙等的方式不断询问缓冲区数据是否准备就绪，避免线程阻塞的开销。</p>
+<p>3 IO多路复用 ：使用IO多路复用器管理socket，由于每个socket是一个文件描述符，操作系统可以维护socket和它的连接状态，一般分为可连接，可读和可写等状态。</p>
+<p>每当用户程序接受到socket请求，将请求托管给多路复用器进行监控，当程序对请求感兴趣的事件发生时，多路复用器以某种方式通知或是用户程序自己轮询请求，以便获取就绪的socket，然后只需使用一个线程进行轮询，多个线程处理就绪请求即可。</p>
+<p>IO多路复用避免了每个socket请求都需要一个线程去处理，而是使用事件驱动的方式，让少数的线程去处理多数socket的IO请求。</p>
+<p>Linux操作系统对IO多路复用提供了较好的支持，select，poll，epoll是Linux提供的支持IO多路复用的API。一般用户程序基于这个API去开发自己的IO复用模型。比如NIO的非阻塞模型，就是采用了IO多路复用的方式，是基于epoll实现的。</p>
+<p>3.1 select方式主要是使用数组来存储socket描述符，系统将发生事件的描述符做标记，然后IO复用器在轮询描述符数组的时候，就可以知道哪些请求是就绪了的。缺点是数组的长度只能到1024，并且需要不断地在内核空间和用户空间之间拷贝数组。</p>
+<p>3.2 poll方式不采用数组存储描述符，而是使用独立的数据结构来描述，并且使用id来表示描述符，能支持更多的请求数量，缺点和select方式有点类似，就是轮询的效率很低，并且需要拷贝数据。</p>
+<p>当然，上述两种方法适合在请求总数较少，并且活跃请求数较多的情况，这种场景下他们的性能还是不错的。</p>
+<p>3.3 epoll</p>
+<p>epoll函数会在内核空间开辟一个特殊的数据结构，红黑树，树节点中存放的是一个socket描述符以及用户程序感兴趣的事件类型。同时epoll还会维护一个链表。用于存储已经就绪的socket描述符节点。</p>
+<p>由Linux内核完成对红黑树的维护，当事件到达时，内核将就绪的socket节点加入链表中，用户程序可以直接访问这个链表以便获取就绪的socket。</p>
+<p>当然了，这些操作都linux包装在epoll的api中了。</p>
+<p>epoll_create函数会执行红黑树的创建操作。</p>
+<p>epoll_ctl函数会将socket和感兴趣的事件注册到红黑树中。</p>
+<p>epoll_wait函数会等待内核空间发来的链表，从而执行IO请求。</p>
+<p>epoll的水平触发和边缘触发有所区别，水平触发的意思是，如果用户程序没有执行就绪链表里的任务，epoll仍会不断通知程序。</p>
+<p>而边缘触发只会通知程序一次，之后socket的状态不发生改变epoll就不会再通知程序了。</p>
+<p>4 信号驱动<br>略</p>
+<p>5 异步非阻塞</p>
+<p>用户进程发起read操作之后，立刻就可以开始去做其它的事。而另一方面，从kernel的角度，当它受到一个asynchronous read之后，首先它会立刻返回，所以不会对用户进程产生任何block。然后，kernel会等待数据准备完成，然后将数据拷贝到用户内存，当这一切都完成之后，kernel会给用户进程发送一个signal，告诉它read操作完成了。</p>
+<p>事实上就是，用户提交IO请求，然后直接返回，并且内核自动完成将数据从内核缓冲区复制到用户缓冲区，完成后再通知用户。</p>
+<p>当然，内核通知我们以后我们还需要执行剩余的操作，但是我们的代码已经继续往下运行了，所以AIO采用了回调的机制，为每个socket注册一个回调事件或者是回调处理器，在处理器中完成数据的操作，也就是内核通知到用户的时候，会自动触发回调函数，完成剩余操作。<br>这样的方式就是异步的网络编程。</p>
+<p>但是，想要让操作系统支持这样的功能并非易事，windows的IOCP可以支持AIO方式，但是Linux的AIO支持并不是很好</p>
+<h2 id="NIO"><a href="#NIO" class="headerlink" title="NIO"></a>NIO</h2><p>由于Java原生的socket只支持阻塞方式处理IO</p>
+<p>所以Java后来推出了新版IO 也叫New IO = NIO</p>
+<p>NIO提出了socketChannel，serversocketchannel，bytebuffer，selector和selectedkey等概念。</p>
+<p>1 socketchannel其实就是socket的替代品，他的好处是多个socket可以复用同一个bytebuffer，因为socket是从channel里打开的，所以多个socket都可以访问channel绑定着的buffer。</p>
+<p>2 serversocketchannel顾名思义，是用在服务端的channel。</p>
+<p>3 bytebuffer以前对用户是透明的，用户直接操作io流即可，所以之前的socket io操作都是阻塞的，引入bytebuffer以后，用户可以更灵活地进行io操作。</p>
+<p>buffer可以分为不同数据类型的buffer，但是常用的还是bytebuffer。写入数据时按顺序写入，写入完使用flip方法反转缓冲区，让接收端反向读取。这个操作比较麻烦，后来的netty对缓冲区进行了重新封装，封装了这个经常容易出错的方法。</p>
+<p>4 selector其实就是对io多路复用器的封装，一般基于linux的epoll来实现。<br>socket把感兴趣的事件和描述符注册到selector上，然后通过遍历selectedKey来获取感兴趣的请求，进行IO操作。<br>selectedkey应该就是epoll中就绪链表的实现了。</p>
+<p>5 所以一般的流程是：<br>新建一个serversocket，启动一个线程进行while循环，当有请求接入时，使用accept方法阻塞获取socket，然后将socket和感兴趣的事件注册到selector上。再开启一个线程轮询selectoredKey，当请求就绪时开启一个线程去处理即可。</p>
+<h2 id="AIO"><a href="#AIO" class="headerlink" title="AIO"></a>AIO</h2><p>后来NIO发展到2.0，Java又推出了AIO 的API，与上面描述的异步非阻塞模型类似。</p>
+<p>AIO使用回调的方式处理IO请求，在socket上注册一个回调函数，然后提交请求后直接返回。由操作系统完成数据拷贝操作，需要操作系统对AIO的支持。</p>
+<p>AIO的具体使用方式还是比较复杂的，感兴趣的可以自己查阅资料。</p>
+<h2 id="Tomcat中的NIO模型"><a href="#Tomcat中的NIO模型" class="headerlink" title="Tomcat中的NIO模型"></a>Tomcat中的NIO模型</h2><p>Tomcat作为一个应用服务器，分为connector和container两个部分，connector负责接收请求，而container负责解析请求。</p>
+<p>一般connector负责接收http请求，当然首先要建立tcp连接，所以涉及到了如何处理连接和IO请求。</p>
+<p>Tomcat使用endpoint的概念来绑定一个ip+port，首先，使用acceptor循环等待连接请求。然后开启一个线程池，也叫poller池，每个请求绑定一个poller进行后续处理，poller将socket请求封装成一个事件，并且将这个事件注册到selector中。</p>
+<p>poller还需要维护一个事件列表，以便获取selector上就绪的事件。然后poller再去列表中获取就绪的请求，将其封装成processor，交给后续的worker线程池，会有worker将其提交给container流程中进行处理。</p>
+<p>当然，到达container之后还有非常复杂的处理过程，稍微提几个点。</p>
+<h2 id="Tomcat的container"><a href="#Tomcat的container" class="headerlink" title="Tomcat的container"></a>Tomcat的container</h2><p>container是一个多级容器，最外层到最内层依次是engine，host，context和wrapper</p>
+<p>下面是个server.xml文件实例，Tomcat根据该文件进行部署</p>
+<server>                                                //顶层类元素，可以包括多个Service<br>    <service>                                           //顶层类元素，可包含一个Engine，多个Connecter<br>        <connector>                                     //连接器类元素，代表通信接口<br>                <engine>                                //容器类元素，为特定的Service组件处理客户请求，要包含多个Host<br>                        <host>                          //容器类元素，为特定的虚拟主机组件处理客户请求，可包含多个Context<br>                                <context>               //容器类元素，为特定的Web应用处理所有的客户请求<br>                                </context><br>                        </host><br>                </engine><br>        </connector><br>    </service><br></server>
+
+
+<p>根据配置文件初始化容器信息，当请求到达时进行容器间的请求传递，事实上整个链条被称作pipeline，pipeline连接了各个容器的入口，由于每个容器和组件都实现了lifecycle接口。</p>
+<p>tomcat可以在任意流程中通过加监听器的方式监听组件的生命周期，也就能够控制整个运行的流程，通过在pipeline上增加valve可以增加一些自定义的操作。</p>
+<p>一般到wrapper层才开始真正的请求解析，因为wrapper其实就是对servlet的简单封装，此时进来的请求和响应已经是httprequest和httpresponse，很多信息已经解析完毕，只需要按照service方法执行业务逻辑即可，当然在执行service方法之前，会调用filter链先执行过滤操作。</p>
+<h2 id="netty"><a href="#netty" class="headerlink" title="netty"></a>netty</h2><p>netty我也不是很在行，这里简单总结一下</p>
+<p>netty是一个基于事件驱动的网络编程框架。</p>
+<p>因为直接基于Java NIO编程复杂度太高，而且容易出错，于是netty对NIO进行了改造和封装。形成了一个比较完整的网络框架，可以通过他实现rpc，http服务。</p>
+<p>先了解一下两种线程模型。reactor和proactor。</p>
+<p>1 reactor就是netty采用的模型，首先也是使用一个acceptor线程接收连接请求，然后开启一个线程组reactor thread pool。</p>
+<p>server会事先在endpoint上注册一系列的回调方法，然后接收socket请求后交给底层的selector进行管理，当selector对应的事件响应以后，会通知用户进程，然后reactor工作线程会执行接下来的IO请求，执行操作是写在回调处理器中的。</p>
+<p>其实netty 支持三种reactor模型<br>1.1.Reactor单线程模型：Reactor单线程模型，指的是所有的I/O操作都在同一个NIO线程上面完成。对于一些小容量应用场景，可以使用单线程模型。</p>
+<p>1.2.Reactor多线程模型：Rector多线程模型与单线程模型最大的区别就是有一组NIO线程处理I/O操作。主要用于高并发、大业务量场景。</p>
+<p>1.3.主从Reactor多线程模型：主从Reactor线程模型的特点是服务端用于接收客户端连接的不再是个1个单独的NIO线程，而是一个独立的NIO线程池。利用主从NIO线程模型，可以解决1个服务端监听线程无法有效处理所有客户端连接的性能不足问题</p>
+<p>2 proactor模型其实是基于异步非阻塞IO模型的，当accpetor接收到请求以后，直接提交异步的io请求给linux内核，内核完成io请求后会回写消息到proactor提供的事件队列中，此时工作线程查看到IO请求已完成，则会继续剩余的工作，也是通过回调处理器来进行的。</p>
+<p>所以两者最大的差别是，前者基于epoll的IO多路复用，后者基于AIO实现。</p>
+<p>3 netty的核心组件：</p>
+<p>bytebuf</p>
+<p>bytebuf是对NIO中Bytebuffer的优化和扩展，并且支持堆外内存分配，堆外内存避免gc，可以更好地与内核空间进行交换数据。</p>
+<p>channel和NIO的channel类似，但是NIO的socket代码改成nio实现非常麻烦，所以netty优化了这个过程，只需替换几个类就可以实现不更新太多代码就完成旧IO和新IO的切换。</p>
+<p>channelhandler就是任务的处理器了，使用回调函数的方式注册到channel中，更准确来说是注册到channelpipeline里。</p>
+<p>channelpipeline是用来管理和连接多个channelhandler的容器，执行任务时，会根据channelpipeline的调用链完成处理器的顺序调用，启动服务器时只需要将需要的channelhandler注册在上面就可以了。</p>
+<p>eventloop<br>在Netty的线程模型中，一个EventLoop将由一个永远不会改变的Thread驱动，而一个Channel一生只会使用一个EventLoop（但是一个EventLoop可能会被指派用于服务多个Channel），在Channel中的所有I/O操作和事件都由EventLoop中的线程处理，也就是说一个Channel的一生之中都只会使用到一个线程。</p>
+<p>bootstrap</p>
+<p>在深入了解地Netty的核心组件之后，发现它们的设计都很模块化，如果想要实现你自己的应用程序，就需要将这些组件组装到一起。Netty通过Bootstrap类，以对一个Netty应用程序进行配置（组装各个组件），并最终使它运行起来。</p>
+<p>对于客户端程序和服务器程序所使用到的Bootstrap类是不同的，后者需要使用ServerBootstrap，这样设计是因为，在如TCP这样有连接的协议中，服务器程序往往需要一个以上的Channel，通过父Channel来接受来自客户端的连接，然后创建子Channel用于它们之间的通信，而像UDP这样无连接的协议，它不需要每个连接都创建子Channel，只需要一个Channel即可。</p>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone, qq, weibo, douban"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="https://geekerstar.github.io" class="b-link-green">极客文库-知识库</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2018/12/27/java-wang-luo-yu-nio-zong-jie/" class="b-link-green">Java网络编程与NIO学习总结</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'e5af4edd318be4fd1767',
+        clientSecret: '5710d909cf183f3dbc6864ad973cdbc2dd3361e6',
+        repo: 'geekerstar.github.io',
+        owner: 'geekerstar',
+        admin: "geekerstar",
+        id: '2018-12-27T22-08-22',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="card">
+                <a href="/2018/12/27/docker-qian-hou-duan-fen-chi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="《Docker环境下的前后端分离部署与运维》课程脚本">
+                        
+                        <span class="card-title">《Docker环境下的前后端分离部署与运维》课程脚本</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">Docker虚拟机常用命令
+先更新软件包
+yum -y update
+
+
+安装Docker虚拟机
+yum install -y docker
+
+
+运行、重启、关闭Docker虚拟机
+service docker start
+service </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-27
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/docker/" class="post-category" target="_blank">
+                                    docker
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/docker/" target="_blank">
+                        <span class="chip bg-color">docker</span>
+                    </a>
+                    
+                    <a href="/tags/前后端分离/" target="_blank">
+                        <span class="chip bg-color">前后端分离</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2018/12/26/foreach/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="java8 foreach">
+                        
+                        <span class="card-title">java8 foreach</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">在这篇文章中我将向你演示如何使用Java8中的foreach操作List和Map
+1. Foreach操作Map1.1 正常方式遍历Map
+Map&lt;String, Integer> items = new HashMap&lt;>()</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java/" class="post-category" target="_blank">
+                                    java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java8/" target="_blank">
+                        <span class="chip bg-color">java8</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title">目录</div>
+            <div id="toc-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="http://www.geekerstar.com" target="_blank">Geekerstar</a>维护，作为
+            <a href="https://www.jikewenku.com" target="_blank">极客文库</a>辅助站
+        </div>
+        <div class="col s12 m4 l4 social-link"><a href="https://github.com/geekerstar" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="https://weibo.com/247507792" class="tooltipped" target="_blank" data-tooltip="微博联系我" data-position="top" data-delay="50">
+    <i class="fa fa-weibo"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 247507792" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+</body>
+</html>
