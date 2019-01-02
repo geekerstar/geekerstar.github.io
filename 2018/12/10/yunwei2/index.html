@@ -1,0 +1,1324 @@
+<!DOCTYPE HTML>
+<html lang="CN">
+<head>
+    
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="写给java开发的运维笔记（中级篇）, 极客文库">
+    <meta name="description" content="中级篇
+配置tomcat为服务
+配置tomcat+nginx反向代理
+使用jemeter测试tomcat性能
+优化tomcat8
+配置多个tomcat
+优化nginx配置
+优化mysql配置
+nginx+startssl配置https
+
+配">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>写给java开发的运维笔记（中级篇） | 极客文库-知识库</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+</head>
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/logo.png" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">极客文库-知识库</span>
+                    </a>
+                </div>
+                <a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>主页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友链</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">极客文库-知识库</div>
+        <div class="logo-desc">
+            
+            汇总计算机相关领域知识、文章及教程，认准域名：https://zhishi.jikewenku.com
+            
+        </div>
+    </div>
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                主页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友链
+            </a>
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/geekerstar" class="waves-effect waves-light" target="_blank">
+                <i class="fa fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+
+    <div class="social-link"><a href="https://github.com/geekerstar" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="https://weibo.com/247507792" class="tooltipped" target="_blank" data-tooltip="微博联系我" data-position="top" data-delay="50">
+    <i class="fa fa-weibo"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 247507792" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+</div>
+
+            </div>
+        </div>
+
+        
+        <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/geekerstar" class="github-corner tooltipped hide-on-med-and-down" target="_blank" data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewbox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/>
+    </svg>
+</a>
+        
+    </nav>
+</header>
+
+
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        写给java开发的运维笔记（中级篇）
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1,
+    #articleContent h2,
+    #articleContent h3,
+    #articleContent h4,
+    #articleContent h5,
+    #articleContent h6 {
+        padding-top: 76px;
+        margin-top: -76px;
+    }
+
+    #articleContent h1 {
+        line-height: 3.5rem;
+    }
+
+    #articleContent h2 {
+        line-height: 3.2rem;
+    }
+
+    #articleContent h3 {
+        line-height: 2.8rem;
+    }
+
+    #articleContent h4 {
+        line-height: 2.5rem;
+    }
+
+    #articleContent h5 {
+        line-height: 2.2rem;
+    }
+
+    #articleContent h6 {
+        line-height: 1.9rem;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            
+            <div class="article-tag">
+                
+                <a href="/tags/java/" target="_blank">
+                    <span class="chip bg-color">java</span>
+                </a>
+                
+                <a href="/tags/运维/" target="_blank">
+                    <span class="chip bg-color">运维</span>
+                </a>
+                
+            </div>
+            
+            <div class="post-info">
+                
+                <span class="post-cate">
+                    <i class="fa fa-bookmark fa-fw icon-category"></i>
+                    
+                    <a href="/categories/运维/" class="post-category" target="_blank">
+                        运维
+                    </a>
+                    
+                </span>
+                
+
+                <span class="post-date">
+                    <i class="fa fa-clock-o fa-fw"></i>2018-12-10
+                </span>
+            </div>
+        </div>
+        <hr>
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="中级篇"><a href="#中级篇" class="headerlink" title="中级篇"></a>中级篇</h2><ol>
+<li>配置tomcat为服务</li>
+<li>配置tomcat+nginx反向代理</li>
+<li>使用jemeter测试tomcat性能</li>
+<li>优化tomcat8</li>
+<li>配置多个tomcat</li>
+<li>优化nginx配置</li>
+<li>优化mysql配置</li>
+<li>nginx+startssl配置https</li>
+</ol>
+<h1 id="配置tomcat为服务"><a href="#配置tomcat为服务" class="headerlink" title="配置tomcat为服务"></a>配置tomcat为服务</h1><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># vim /etc/init.d/tomcat8</span>
+</code></pre>
+<p><em>tomcat服务脚本</em></p>
+<pre class=" language-bash"><code class="language-bash"><span class="token shebang important">#!/bin/bash</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># description: Apache Tomcat init script</span>
+<span class="token comment" spellcheck="true"># processname: tomcat  </span>
+<span class="token comment" spellcheck="true"># chkconfig: 234 20 80  </span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># Copyright (C) 2014 Miglen Evlogiev</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># This program is free software: you can redistribute it and/or modify it under</span>
+<span class="token comment" spellcheck="true"># the terms of the GNU General Public License as published by the Free Software</span>
+<span class="token comment" spellcheck="true"># Foundation, either version 3 of the License, or (at your option) any later</span>
+<span class="token comment" spellcheck="true"># version.</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># This program is distributed in the hope that it will be useful, but WITHOUT</span>
+<span class="token comment" spellcheck="true"># ANY WARRANTY; without even the implied warranty of  MERCHANTABILITY or FITNESS</span>
+<span class="token comment" spellcheck="true"># FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># You should have received a copy of the GNU General Public License along with</span>
+<span class="token comment" spellcheck="true"># this program.  If not, see &lt;http://www.gnu.org/licenses/>.</span>
+<span class="token comment" spellcheck="true">#</span>
+<span class="token comment" spellcheck="true"># Initially forked from: gist.github.com/valotas/1000094</span>
+<span class="token comment" spellcheck="true"># Source: gist.github.com/miglen/5590986</span>
+
+
+<span class="token comment" spellcheck="true">#Location of JAVA_HOME (bin files)</span>
+<span class="token function">export</span> JAVA_HOME<span class="token operator">=</span>/usr/local/java/jdk1.8.0_102
+<span class="token function">export</span> JRE_HOME<span class="token operator">=</span>/usr/local/java/jdk1.8.0_102/jre
+
+<span class="token comment" spellcheck="true">#Add Java binary files to PATH</span>
+<span class="token function">export</span> PATH<span class="token operator">=</span><span class="token variable">$JAVA_HOME</span>/bin:<span class="token variable">$PATH</span>
+
+<span class="token comment" spellcheck="true">#CATALINA_HOME is the location of the bin files of Tomcat  </span>
+<span class="token function">export</span> CATALINA_HOME<span class="token operator">=</span>/usr/local/tomcat8
+
+<span class="token comment" spellcheck="true">#CATALINA_BASE is the location of the configuration files of this instance of Tomcat</span>
+<span class="token function">export</span> CATALINA_BASE<span class="token operator">=</span>/usr/local/tomcat8
+
+
+<span class="token comment" spellcheck="true">#TOMCAT_USAGE is the message if this script is called without any options</span>
+TOMCAT_USAGE<span class="token operator">=</span><span class="token string">"Usage: <span class="token variable">$0</span> {\e[00;32mstart\e[00m|\e[00;31mstop\e[00m|\e[00;31mkill\e[00m|\e[00;32mstatus\e[00m|\e[00;31mrestart\e[00m}"</span>
+
+<span class="token comment" spellcheck="true">#SHUTDOWN_WAIT is wait time in seconds for java proccess to stop</span>
+SHUTDOWN_WAIT<span class="token operator">=</span>20
+
+tomcat_pid<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">echo</span> `ps -fe <span class="token operator">|</span> <span class="token function">grep</span> <span class="token variable">$CATALINA_BASE</span> <span class="token operator">|</span> <span class="token function">grep</span> -v <span class="token function">grep</span> <span class="token operator">|</span> <span class="token function">tr</span> -s <span class="token string">" "</span><span class="token operator">|</span><span class="token function">cut</span> -d<span class="token string">" "</span> -f2`
+<span class="token punctuation">}</span>
+
+start<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  pid<span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>tomcat_pid<span class="token variable">)</span></span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -n <span class="token string">"<span class="token variable">$pid</span>"</span> <span class="token punctuation">]</span>
+  <span class="token keyword">then</span>
+    <span class="token keyword">echo</span> -e <span class="token string">"\e[00;31mTomcat is already running (pid: <span class="token variable">$pid</span>)\e[00m"</span>
+  <span class="token keyword">else</span>
+    <span class="token comment" spellcheck="true"># Start tomcat</span>
+    <span class="token keyword">echo</span> -e <span class="token string">"\e[00;32mStarting tomcat\e[00m"</span>
+    <span class="token comment" spellcheck="true">#ulimit -n 100000</span>
+    <span class="token comment" spellcheck="true">#umask 007</span>
+    <span class="token comment" spellcheck="true">#/bin/su -p -s /bin/sh $TOMCAT_USER</span>
+        <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable"><span class="token variable">`</span>user_exists $TOMCAT_USER<span class="token variable">`</span></span> <span class="token operator">=</span> <span class="token string">"1"</span> <span class="token punctuation">]</span>
+        <span class="token keyword">then</span>
+                /bin/su <span class="token variable">$TOMCAT_USER</span> -c <span class="token variable">$CATALINA_HOME</span>/bin/startup.sh
+        <span class="token keyword">else</span>
+                <span class="token keyword">echo</span> -e <span class="token string">"\e[00;31mTomcat user <span class="token variable">$TOMCAT_USER</span> does not exists. Starting with <span class="token variable"><span class="token variable">$(</span><span class="token function">id</span><span class="token variable">)</span></span>\e[00m"</span>
+                sh <span class="token variable">$CATALINA_HOME</span>/bin/startup.sh
+        <span class="token keyword">fi</span>
+        status
+  <span class="token keyword">fi</span>
+  <span class="token keyword">return</span> 0
+<span class="token punctuation">}</span>
+
+status<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+          pid<span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>tomcat_pid<span class="token variable">)</span></span>
+          <span class="token keyword">if</span> <span class="token punctuation">[</span> -n <span class="token string">"<span class="token variable">$pid</span>"</span> <span class="token punctuation">]</span>
+            <span class="token keyword">then</span> <span class="token keyword">echo</span> -e <span class="token string">"\e[00;32mTomcat is running with pid: <span class="token variable">$pid</span>\e[00m"</span>
+          <span class="token keyword">else</span>
+            <span class="token keyword">echo</span> -e <span class="token string">"\e[00;31mTomcat is not running\e[00m"</span>
+            <span class="token keyword">return</span> 3
+          <span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
+
+terminate<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">echo</span> -e <span class="token string">"\e[00;31mTerminating Tomcat\e[00m"</span>
+    <span class="token function">kill</span> -9 <span class="token variable"><span class="token variable">$(</span>tomcat_pid<span class="token variable">)</span></span>
+<span class="token punctuation">}</span>
+
+stop<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  pid<span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>tomcat_pid<span class="token variable">)</span></span>
+  <span class="token keyword">if</span> <span class="token punctuation">[</span> -n <span class="token string">"<span class="token variable">$pid</span>"</span> <span class="token punctuation">]</span>
+  <span class="token keyword">then</span>
+    <span class="token keyword">echo</span> -e <span class="token string">"\e[00;31mStoping Tomcat\e[00m"</span>
+    <span class="token comment" spellcheck="true">#/bin/su -p -s /bin/sh $TOMCAT_USER</span>
+        sh <span class="token variable">$CATALINA_HOME</span>/bin/shutdown.sh
+
+    <span class="token keyword">let</span> kwait<span class="token operator">=</span><span class="token variable">$SHUTDOWN_WAIT</span>
+    count<span class="token operator">=</span>0<span class="token punctuation">;</span>
+    <span class="token keyword">until</span> <span class="token punctuation">[</span> <span class="token variable"><span class="token variable">`</span><span class="token function">ps</span> -p $pid <span class="token operator">|</span> <span class="token function">grep</span> -c $pid<span class="token variable">`</span></span> <span class="token operator">=</span> <span class="token string">'0'</span> <span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">[</span> <span class="token variable">$count</span> -gt <span class="token variable">$kwait</span> <span class="token punctuation">]</span>
+    <span class="token keyword">do</span>
+      <span class="token keyword">echo</span> -n -e <span class="token string">"\n\e[00;31mwaiting for processes to exit\e[00m"</span><span class="token punctuation">;</span>
+      <span class="token function">sleep</span> 1
+      <span class="token keyword">let</span> count<span class="token operator">=</span><span class="token variable">$count</span>+1<span class="token punctuation">;</span>
+    <span class="token keyword">done</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$count</span> -gt <span class="token variable">$kwait</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+      <span class="token keyword">echo</span> -n -e <span class="token string">"\n\e[00;31mkilling processes didn't stop after <span class="token variable">$SHUTDOWN_WAIT</span> seconds\e[00m"</span>
+      terminate
+    <span class="token keyword">fi</span>
+  <span class="token keyword">else</span>
+    <span class="token keyword">echo</span> -e <span class="token string">"\e[00;31mTomcat is not running\e[00m"</span>
+  <span class="token keyword">fi</span>
+
+  <span class="token keyword">return</span> 0
+<span class="token punctuation">}</span>
+
+user_exists<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token function">id</span> -u <span class="token variable">$1</span> <span class="token operator">></span>/dev/null 2<span class="token operator">></span><span class="token operator">&amp;</span>1<span class="token punctuation">;</span> <span class="token keyword">then</span>
+        <span class="token keyword">echo</span> <span class="token string">"1"</span>
+        <span class="token keyword">else</span>
+                <span class="token keyword">echo</span> <span class="token string">"0"</span>
+        <span class="token keyword">fi</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">case</span> <span class="token variable">$1</span> <span class="token keyword">in</span>
+    start<span class="token punctuation">)</span>
+      start
+    <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    stop<span class="token punctuation">)</span>  
+      stop
+    <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    restart<span class="token punctuation">)</span>
+      stop
+      start
+    <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    status<span class="token punctuation">)</span>
+        status
+        <span class="token keyword">exit</span> <span class="token variable">$?</span>  
+    <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    kill<span class="token punctuation">)</span>
+        terminate
+    <span class="token punctuation">;</span><span class="token punctuation">;</span>        
+    *<span class="token punctuation">)</span>
+        <span class="token keyword">echo</span> -e <span class="token variable">$TOMCAT_USAGE</span>
+    <span class="token punctuation">;</span><span class="token punctuation">;</span>
+esac    
+<span class="token keyword">exit</span> 0
+</code></pre>
+<p>这个脚本中需要注意你的jdk,jre位置和tomcat所在位置, 修改正确后保存。</p>
+<h2 id="给服务授权"><a href="#给服务授权" class="headerlink" title="给服务授权"></a>给服务授权</h2><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># chmod +x /etc/init.d/tomcat8</span>
+</code></pre>
+<h2 id="使用服务"><a href="#使用服务" class="headerlink" title="使用服务"></a>使用服务</h2><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># service tomcat8 status</span>
+Tomcat is not running
+
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># service tomcat8 start</span>
+Starting tomcat
+Using CATALINA_BASE:   /usr/local/tomcat8
+Using CATALINA_HOME:   /usr/local/tomcat8
+Using CATALINA_TMPDIR: /usr/local/tomcat8/temp
+Using JRE_HOME:        /usr/local/java/jdk1.8.0_102/jre
+Using CLASSPATH:       /usr/local/tomcat8/bin/bootstrap.jar:/usr/local/tomcat8/bin/tomcat-juli.jar
+Tomcat started.
+Tomcat is running with pid: 15282
+
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># service tomcat8 stop</span>
+Stoping Tomcat
+Using CATALINA_BASE:   /usr/local/tomcat8
+Using CATALINA_HOME:   /usr/local/tomcat8
+Using CATALINA_TMPDIR: /usr/local/tomcat8/temp
+Using JRE_HOME:        /usr/local/java/jdk1.8.0_102/jre
+Using CLASSPATH:       /usr/local/tomcat8/bin/bootstrap.jar:/usr/local/tomcat8/bin/tomcat-juli.jar
+
+waiting <span class="token keyword">for</span> processes to <span class="token keyword">exit</span>
+</code></pre>
+<h2 id="设置开机启动"><a href="#设置开机启动" class="headerlink" title="设置开机启动"></a>设置开机启动</h2><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># chkconfig --add tomcat8</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># chkconfig</span>
+auditd             0:off    1:off    2:on    3:on    4:on    5:on    6:off
+blk-availability    0:off    1:on    2:on    3:on    4:on    5:on    6:off
+crond              0:off    1:off    2:on    3:on    4:on    5:on    6:off
+ip6tables          0:off    1:off    2:on    3:on    4:on    5:on    6:off
+iptables           0:off    1:off    2:on    3:on    4:on    5:on    6:off
+iscsi              0:off    1:off    2:off    3:on    4:on    5:on    6:off
+iscsid             0:off    1:off    2:off    3:on    4:on    5:on    6:off
+lvm2-monitor       0:off    1:on    2:on    3:on    4:on    5:on    6:off
+mdmonitor          0:off    1:off    2:on    3:on    4:on    5:on    6:off
+multipathd         0:off    1:off    2:off    3:off    4:off    5:off    6:off
+mysqld             0:off    1:off    2:on    3:on    4:on    5:on    6:off
+netconsole         0:off    1:off    2:off    3:off    4:off    5:off    6:off
+netfs              0:off    1:off    2:off    3:on    4:on    5:on    6:off
+network            0:off    1:off    2:on    3:on    4:on    5:on    6:off
+nginx              0:off    1:off    2:on    3:on    4:on    5:on    6:off
+postfix            0:off    1:off    2:on    3:on    4:on    5:on    6:off
+rdisc              0:off    1:off    2:off    3:off    4:off    5:off    6:off
+redis_6379         0:off    1:off    2:on    3:on    4:on    5:on    6:off
+restorecond        0:off    1:off    2:off    3:off    4:off    5:off    6:off
+rsyslog            0:off    1:off    2:on    3:on    4:on    5:on    6:off
+saslauthd          0:off    1:off    2:off    3:off    4:off    5:off    6:off
+sshd               0:off    1:off    2:on    3:on    4:on    5:on    6:off
+tomcat8            0:off    1:off    2:on    3:on    4:on    5:off    6:off
+udev-post          0:off    1:on    2:on    3:on    4:on    5:on    6:off
+</code></pre>
+<h1 id="配置tomcat-nginx反向代理"><a href="#配置tomcat-nginx反向代理" class="headerlink" title="配置tomcat+nginx反向代理"></a>配置tomcat+nginx反向代理</h1><p>一般我们服务器对外只暴力22, 443, 80端口，其他的尽量都在内网访问，那么tomcat的8080端口是不应该对外访问的，<br>nginx作为一个性能卓越的web服务器提供了反向代理的功能，可以做到转发。</p>
+<p>假设我们现在有一个域名绑定在服务器的80端口上，使用tomcat搭建的程序，但是我又不想修改tomcat端口，该怎么办呢？</p>
+<p>nginx默认监听了80端口，配置文件在 <code>/usr/local/nginx/conf</code>文件夹下的 <code>nginx.conf</code>。</p>
+<h2 id="取消默认站点"><a href="#取消默认站点" class="headerlink" title="取消默认站点"></a>取消默认站点</h2><pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cd /usr/local/nginx/conf</span>
+<span class="token punctuation">[</span>root@localhost conf<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># vim nginx.conf</span>
+</code></pre>
+<p>将 <code>server</code> 块注释即可。然后我们在 <code>conf</code> 文件夹下创建一个 <code>vhost</code> 目录存储虚拟主机配置文件。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost conf<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># mkdir vhost</span>
+</code></pre>
+<p>创建一个tomcat的虚拟主机配置文件。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost conf<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># vim vhost/tomcat8.conf</span>
+</code></pre>
+<p>加入以下配置</p>
+<pre class=" language-bash"><code class="language-bash">server <span class="token punctuation">{</span>
+  listen       80<span class="token punctuation">;</span>
+  server_name localhost<span class="token punctuation">;</span>
+
+  location / <span class="token punctuation">{</span>
+    proxy_pass http://127.0.0.1:8080<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>在 <code>nginx.conf</code> 中将 <code>vhost</code> 文件夹下的配置文件引入，只需在 <code>http</code> 块中加入一行 <code>include vhost/*.conf</code> 保存即可。</p>
+<p>重启nginx</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost conf<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># service nginx restart</span>
+Stopping Nginx:                                            <span class="token punctuation">[</span>  OK  <span class="token punctuation">]</span>
+Starting Nginx:                                            <span class="token punctuation">[</span>  OK  <span class="token punctuation">]</span>
+</code></pre>
+<p>查看tomcat是否已经启动，如果关闭将它开启，然后访问 <a href="http://192.168.100.128/" target="_blank" rel="noopener">http://192.168.100.128/</a></p>
+<p><img src="https://ooo.0o0.ooo/2016/09/09/57d260a9a1004.png" alt=""></p>
+<p>这样tomcat的8080端口就被nginx转发了，我们此时用域名直接绑定到80端口即可！</p>
+<h1 id="使用jemeter测试tomcat性能"><a href="#使用jemeter测试tomcat性能" class="headerlink" title="使用jemeter测试tomcat性能"></a>使用jemeter测试tomcat性能</h1><p>JMeter是Apache组织开发的基于Java的压力测试工具。用于对软件做压力测试，它最初被设计用于Web应用测试，但后来扩展到其他测试领域。 </p>
+<p>下载地址：<a href="http://jmeter.apache.org/download_jmeter.cgi" target="_blank" rel="noopener">http://jmeter.apache.org/download_jmeter.cgi</a></p>
+<p>安装启动即可。</p>
+<p><img src="https://ooo.0o0.ooo/2016/09/09/57d26181a3bbc.png" alt=""></p>
+<h2 id="服务器环境"><a href="#服务器环境" class="headerlink" title="服务器环境"></a>服务器环境</h2><ul>
+<li>CPU：Intel(R) Core(TM) i5-4590 CPU @ 3.30GHz</li>
+<li>内存：1G</li>
+<li>操作系统：CentOS6.8_x64</li>
+<li>JDK：1.8.0_102</li>
+<li>Tomcat：8.5.5</li>
+</ul>
+<p>下面所有测试都是基于1000个请求做的，且都是访问Tomcat默认的ROOT首页</p>
+<h2 id="创建测试计划"><a href="#创建测试计划" class="headerlink" title="创建测试计划"></a>创建测试计划</h2><p><img src="https://ooo.0o0.ooo/2016/09/09/57d262594f2ec.png" alt=""><br><img src="https://ooo.0o0.ooo/2016/09/09/57d262640c284.png" alt=""><br><img src="https://ooo.0o0.ooo/2016/09/09/57d2626eddf57.png" alt=""></p>
+<p>配置参数，这里我们进行多次测试.</p>
+<p><img src="https://ooo.0o0.ooo/2016/09/09/57d262af81eaf.png" alt=""><br><img src="https://ooo.0o0.ooo/2016/09/09/57d262b9a7fe3.png" alt=""></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">并发用户数</th>
+<th style="text-align:center">吞吐量/每秒</th>
+<th style="text-align:center">请求等待时间/毫秒</th>
+<th style="text-align:center">错误请求数/百分比</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">10</td>
+<td style="text-align:center">1999</td>
+<td style="text-align:center">8</td>
+<td style="text-align:center">0.00</td>
+</tr>
+<tr>
+<td style="text-align:center">20</td>
+<td style="text-align:center">2667</td>
+<td style="text-align:center">11</td>
+<td style="text-align:center">0.00</td>
+</tr>
+<tr>
+<td style="text-align:center">30</td>
+<td style="text-align:center">2746</td>
+<td style="text-align:center">13</td>
+<td style="text-align:center">0.00</td>
+</tr>
+<tr>
+<td style="text-align:center">40</td>
+<td style="text-align:center">2730</td>
+<td style="text-align:center">16</td>
+<td style="text-align:center">0.00</td>
+</tr>
+<tr>
+<td style="text-align:center">50</td>
+<td style="text-align:center">2682</td>
+<td style="text-align:center">20</td>
+<td style="text-align:center">0.00</td>
+</tr>
+<tr>
+<td style="text-align:center">60</td>
+<td style="text-align:center">2756</td>
+<td style="text-align:center">23</td>
+<td style="text-align:center">0.00</td>
+</tr>
+<tr>
+<td style="text-align:center">70</td>
+<td style="text-align:center">2764</td>
+<td style="text-align:center">27</td>
+<td style="text-align:center">0.00</td>
+</tr>
+<tr>
+<td style="text-align:center">80</td>
+<td style="text-align:center">2714</td>
+<td style="text-align:center">32</td>
+<td style="text-align:center">0.00</td>
+</tr>
+<tr>
+<td style="text-align:center">90</td>
+<td style="text-align:center">2131</td>
+<td style="text-align:center">35</td>
+<td style="text-align:center">0.00</td>
+</tr>
+<tr>
+<td style="text-align:center">100</td>
+<td style="text-align:center">2739</td>
+<td style="text-align:center">38</td>
+<td style="text-align:center">0.00</td>
+</tr>
+<tr>
+<td style="text-align:center">200</td>
+<td style="text-align:center">1404</td>
+<td style="text-align:center">43</td>
+<td style="text-align:center">0.34%</td>
+</tr>
+<tr>
+<td style="text-align:center">300</td>
+<td style="text-align:center">1066</td>
+<td style="text-align:center">50</td>
+<td style="text-align:center">0.77%</td>
+</tr>
+<tr>
+<td style="text-align:center">400</td>
+<td style="text-align:center">995</td>
+<td style="text-align:center">52</td>
+<td style="text-align:center">1.23%</td>
+</tr>
+<tr>
+<td style="text-align:center">500</td>
+<td style="text-align:center">1086</td>
+<td style="text-align:center">46</td>
+<td style="text-align:center">1.42%</td>
+</tr>
+<tr>
+<td style="text-align:center">1000</td>
+<td style="text-align:center">1163</td>
+<td style="text-align:center">59</td>
+<td style="text-align:center">2.83%</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://ooo.0o0.ooo/2016/09/09/57d276759cccc.png" alt=""></p>
+<p><img src="https://ooo.0o0.ooo/2016/09/09/57d2768276105.png" alt=""></p>
+<p>从上面的测试结果来看，在90-100个并发的时候出现不稳定，其他都比较平缓，请求时间一直在上涨。CPU负载均在60%左右。</p>
+<p>在聚合报告中，会显示一行数据，共有10个字段，含义分别如下。</p>
+<ul>
+<li><p>Label：每个 JMeter 的 element（例如 HTTP Request）都有一个 Name 属性，这里显示的就是 Name 属性的值</p>
+</li>
+<li><h1 id="Samples：表示你这次测试中一共发出了多少个请求，如果模拟10个用户，每个用户迭代10次，那么这里显示100"><a href="#Samples：表示你这次测试中一共发出了多少个请求，如果模拟10个用户，每个用户迭代10次，那么这里显示100" class="headerlink" title="Samples：表示你这次测试中一共发出了多少个请求，如果模拟10个用户，每个用户迭代10次，那么这里显示100"></a>Samples：表示你这次测试中一共发出了多少个请求，如果模拟10个用户，每个用户迭代10次，那么这里显示100</h1></li>
+<li><p>Average：平均响应时间——默认情况下是单个 Request 的平均响应时间，当使用了 Transaction Controller 时，也可以以Transaction 为单位显示平均响应时间</p>
+</li>
+<li><p>Median：中位数，也就是 50％ 用户的响应时间</p>
+</li>
+<li><p>90% Line：90％ 用户的响应时间</p>
+</li>
+<li><p>Min：最小响应时间</p>
+</li>
+<li><p>Max：最大响应时间</p>
+</li>
+<li><p>Error%：本次测试中出现错误的请求的数量/请求的总数</p>
+</li>
+<li><p>Throughput：吞吐量——默认情况下表示每秒完成的请求数（Request per Second）</p>
+</li>
+<li><p>KB/Sec：每秒从服务器端接收到的数据量，相当于LoadRunner中的Throughput/Sec</p>
+</li>
+</ul>
+<p>在下一章节我们介绍对tomcat8的优化。</p>
+<h1 id="优化tomcat8"><a href="#优化tomcat8" class="headerlink" title="优化tomcat8"></a>优化tomcat8</h1><p>我们优化tomcat的目的是提高并发性，即在多线程环境下能够快速响应，提高吞吐量。</p>
+<p>首先在tomcat的bin目录下新建一个名为 <code>setenv.sh</code> 的文件，tomcat启动时会自动加载该文件。</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost bin<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># vim setenv.sh</span>
+</code></pre>
+<p>加入tomcat基础配置</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token comment" spellcheck="true">#!/usr/bin</span>
+
+<span class="token function">export</span> CATALINA_HOME<span class="token operator">=</span>/usr/local/tomcat8
+<span class="token function">export</span> CATALINA_BASE<span class="token operator">=</span>/usr/local/tomcat8
+</code></pre>
+<h2 id="JAVA-OPTS"><a href="#JAVA-OPTS" class="headerlink" title="JAVA_OPTS"></a>JAVA_OPTS</h2><p>加入如下配置，我们服务器的内存是1G。这里我设置最大占用768</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token function">export</span> JAVA_OPTS<span class="token operator">=</span><span class="token string">"<span class="token variable">$JAVA_OPTS</span>\
+ -server\
+ -Xms768m\
+ -Xmx768m\
+ -Xss512k\
+ -Djava.awt.headless=true\
+ -Dfile.encoding=utf-8\
+ -Djava.net.preferIPv4Stack=true\
+ -Djava.security.egd=file:/dev/./urandom"</span>
+</code></pre>
+<ul>
+<li>-server：表示这是应用于服务器的配置，JVM 内部会有特殊处理的</li>
+<li>-Xms768m：设置JVM最大可用内存为768MB</li>
+<li>-Xmx768m：设置JVM最小内存为768MB。此值可以设置与-Xmx相同，以避免每次垃圾回收完成后JVM重新分配内存。</li>
+<li>-Dfile.encoding：默认文件编码</li>
+<li>-Djava.net.preferIPv4Stack：使用IPV4</li>
+<li>-Djava.security.egd：<a href="http://fengbin2005.iteye.com/blog/2313845" target="_blank" rel="noopener">详细解释</a></li>
+</ul>
+<h2 id="优化server-xml"><a href="#优化server-xml" class="headerlink" title="优化server.xml"></a>优化<code>server.xml</code></h2><pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Connector</span>  <span class="token attr-name">port</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>8080<span class="token punctuation">"</span></span> 
+    <span class="token attr-name">maxThreads</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>8000<span class="token punctuation">"</span></span>
+        <span class="token attr-name">minSpareThreads</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>215<span class="token punctuation">"</span></span>
+        <span class="token attr-name">maxSpareThreads</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>2048<span class="token punctuation">"</span></span>
+        <span class="token attr-name">connectionTimeout</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>20000<span class="token punctuation">"</span></span>
+        <span class="token attr-name">redirectPort</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>8443<span class="token punctuation">"</span></span>
+    <span class="token attr-name">acceptCount</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>100<span class="token punctuation">"</span></span>
+        <span class="token attr-name">debug</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span>
+    <span class="token attr-name">enableLookups</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>false<span class="token punctuation">"</span></span>
+    <span class="token attr-name">disableUploadTimeout</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token attr-name">URIEncoding</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token attr-name">useBodyEncodingForURI</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>true<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+</code></pre>
+<p><strong>maxThreads 连接数限制</strong></p>
+<p>maxThreads 是 Tomcat 所能接受最大连接数。一般设置不要超过8000以上，如果你的网站访问量非常大可能使用运行多个Tomcat实例的方法。</p>
+<h2 id="安装apr"><a href="#安装apr" class="headerlink" title="安装apr"></a>安装apr</h2><p>安装依赖</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># yum install -y openssl-devel</span>
+</code></pre>
+<p>下载apr相关包</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># wget http://mirrors.tuna.tsinghua.edu.cn/apache//apr/apr-1.5.2.tar.gz</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># wget http://mirrors.tuna.tsinghua.edu.cn/apache//apr/apr-util-1.5.4.tar.gz</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># wget http://mirrors.tuna.tsinghua.edu.cn/apache//apr/apr-iconv-1.2.1.tar.gz</span>
+
+<span class="token comment" spellcheck="true"># 安装apr</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># tar -zxvf apr-1.5.2.tar.gz</span>
+
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cd apr-1.5.2</span>
+<span class="token punctuation">[</span>root@localhost apr-1.5.2<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># ./configure &amp;&amp; make &amp;&amp; make install</span>
+
+<span class="token comment" spellcheck="true"># 安装apr-util</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># tar -zxvf apr-util-1.5.4.tar.gz</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cd apr-util-1.5.4</span>
+<span class="token punctuation">[</span>root@localhost apr-util-1.5.4<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># ./configure --with-apr=/usr/local/apr &amp;&amp; make &amp;&amp; make install</span>
+
+<span class="token comment" spellcheck="true"># 安装apr-iconv</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cd apr-iconv-1.2.1</span>
+<span class="token punctuation">[</span>root@localhost apr-iconv-1.2.1<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># ./configure --with-apr=/usr/local/apr &amp;&amp; make &amp;&amp; make install</span>
+</code></pre>
+<p>配置tomcat</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost apr-iconv-1.2.1<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cd /usr/local/tomcat8/bin/</span>
+<span class="token punctuation">[</span>root@localhost bin<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># tar -zxf tomcat-native.tar.gz</span>
+<span class="token punctuation">[</span>root@localhost bin<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cd tomcat-native-1.2.8-src/native/</span>
+<span class="token punctuation">[</span>root@localhost native<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># ./configure --with-apr=/usr/local/apr &amp;&amp; make &amp;&amp; make install</span>
+</code></pre>
+<p>这是提示我</p>
+<pre class=" language-bash"><code class="language-bash">configure: error: Your version of OpenSSL is not compatible with this version of tcnative
+</code></pre>
+<p>由于centos 当前的yum 库只有1.0.1 的OpenSSL，所以我们需要手工安装1.0.2</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># wget https://www.openssl.org/source/openssl-1.0.2-latest.tar.gz</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># tar -zxf openssl-1.0.2-latest.tar.gz</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cd openssl-1.0.2h</span>
+<span class="token punctuation">[</span>root@localhost openssl-1.0.2h<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># ./config --prefix=/usr/local/openssl -fPIC</span>
+</code></pre>
+<blockquote>
+<p>注意这里需要加入 -fPIC参数，否则后面在安装tomcat native 组件会出错<br>注意：不要按照提示去运行 make depend</p>
+</blockquote>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost openssl-1.0.2h<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># make</span>
+<span class="token punctuation">[</span>root@localhost openssl-1.0.2h<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># make install</span>
+<span class="token punctuation">[</span>root@localhost openssl-1.0.2h<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># mv /usr/bin/openssl ~</span>
+<span class="token punctuation">[</span>root@localhost openssl-1.0.2h<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># ln -s /usr/local/openssl/bin/openssl /usr/bin/openssl</span>
+<span class="token punctuation">[</span>root@localhost openssl-1.0.2h<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># openssl version</span>
+OpenSSL 1.0.2h  3 May 2016
+</code></pre>
+<p>重新安装 tomcat-native组件</p>
+<pre class=" language-bash"><code class="language-bash"><span class="token punctuation">[</span>root@localhost openssl-1.0.2h<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># cd /usr/local/tomcat8/bin/tomcat-native-1.2.8-src/native/</span>
+<span class="token punctuation">[</span>root@localhost native<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># ./configure --with-apr=/usr/local/apr --with-ssl=/usr/local/openssl</span>
+<span class="token punctuation">[</span>root@localhost native<span class="token punctuation">]</span><span class="token comment" spellcheck="true"># make &amp;&amp; make install</span>
+</code></pre>
+<p>在 <code>setenv.sh</code> 文件中添加</p>
+<pre class=" language-bash"><code class="language-bash">LD_LIBRARY_PATH<span class="token operator">=</span><span class="token variable">$LD_LIBRARY_PATH</span>:/usr/local/apr/lib
+<span class="token function">export</span> LD_LIBRARY_PATH
+</code></pre>
+<p>在 <code>server.xml</code> 中加</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Connector</span>  <span class="token attr-name">port</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>8080<span class="token punctuation">"</span></span> 
+            <span class="token attr-name">protocol</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>org.apache.coyote.http11.Http11AprProtocol<span class="token punctuation">"</span></span>
+<span class="token punctuation">/></span></span>
+</code></pre>
+<p>启动tomcat，打开控制台日志可以看到如图所示的日志</p>
+<p><img src="https://ooo.0o0.ooo/2016/09/09/57d281093d907.png" alt=""></p>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone, qq, weibo, douban"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">转载请注明: </span>
+                    <a href="https://geekerstar.github.io" class="b-link-green">极客文库-知识库</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2018/12/10/yunwei2/" class="b-link-green">写给java开发的运维笔记（中级篇）</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'e5af4edd318be4fd1767',
+        clientSecret: '5710d909cf183f3dbc6864ad973cdbc2dd3361e6',
+        repo: 'geekerstar.github.io',
+        owner: 'geekerstar',
+        admin: "geekerstar",
+        id: '2018-12-10T22-32-57',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">上一篇</div>
+            <div class="card">
+                <a href="/2018/12/12/docker-qian-hou-duan-fen-chi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="《Docker环境下的前后端分离部署与运维》课程脚本">
+                        
+                        <span class="card-title">《Docker环境下的前后端分离部署与运维》课程脚本</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">Docker虚拟机常用命令
+先更新软件包
+yum -y update
+
+
+安装Docker虚拟机
+yum install -y docker
+
+
+运行、重启、关闭Docker虚拟机
+service docker start
+service </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-12
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/docker/" class="post-category" target="_blank">
+                                    docker
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/docker/" target="_blank">
+                        <span class="chip bg-color">docker</span>
+                    </a>
+                    
+                    <a href="/tags/前后端分离/" target="_blank">
+                        <span class="chip bg-color">前后端分离</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2018/12/09/java1/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="java基础知识总结">
+                        
+                        <span class="card-title">java基础知识总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">
+
+1. 一个”.java”源文件中是否可以包括多个类?
+2. 源文件javac出多个class文件出来是怎么回事?
+3. 什么是匿名类？
+4. switch case中switch后的变量类型可以是什么？
+5. char型变量与汉字。
+6</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-09
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java/" class="post-category" target="_blank">
+                                    java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/javase/" target="_blank">
+                        <span class="chip bg-color">javase</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title">目录</div>
+            <div id="toc-content">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由&copy;<a href="http://www.geekerstar.com" target="_blank">Geekerstar</a>维护，作为
+            <a href="https://www.jikewenku.com" target="_blank">极客文库</a>辅助站
+        </div>
+        <div class="col s12 m4 l4 social-link"><a href="https://github.com/geekerstar" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <i class="fa fa-github"></i>
+</a>
+<a href="https://weibo.com/247507792" class="tooltipped" target="_blank" data-tooltip="微博联系我" data-position="top" data-delay="50">
+    <i class="fa fa-weibo"></i>
+</a>
+<a href="#!" class="tooltipped" data-tooltip="QQ联系我: 247507792" data-position="top" data-delay="50">
+    <i class="fa fa-qq"></i>
+</a>
+
+<a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+    <i class="fa fa-rss"></i>
+</a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title">搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+</body>
+</html>
