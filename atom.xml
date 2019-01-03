@@ -108,20 +108,6 @@
   </entry>
   
   <entry>
-    <title>ly12</title>
-    <link href="https://geekerstar.github.io/2019/01/03/ly12/"/>
-    <id>https://geekerstar.github.io/2019/01/03/ly12/</id>
-    <published>2019-01-03T09:30:51.000Z</published>
-    <updated>2019-01-03T09:30:51.656Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>操作系统学习总结</title>
     <link href="https://geekerstar.github.io/2019/01/02/cao-zuo-xi-tong-xue-xi-zong-jie/"/>
     <id>https://geekerstar.github.io/2019/01/02/cao-zuo-xi-tong-xue-xi-zong-jie/</id>
@@ -142,6 +128,36 @@
     </summary>
     
       <category term="操作系统" scheme="https://geekerstar.github.io/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+      <category term="操作系统" scheme="https://geekerstar.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>操作系统知识点总结</title>
+    <link href="https://geekerstar.github.io/2019/01/02/cao-zuo-xi-tong-zhi-shi-dian-zong-jie/"/>
+    <id>https://geekerstar.github.io/2019/01/02/cao-zuo-xi-tong-zhi-shi-dian-zong-jie/</id>
+    <published>2019-01-02T14:32:57.000Z</published>
+    <updated>2019-01-02T12:44:29.591Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;!-- TOC --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-进程间通信方式&quot;&gt;1. 进程间通信方式&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#2-操作系统的特征&quot;&gt;2. 操作系统的特征&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#3-进程的组成&quot;&gt;3.
+        
+      
+    
+    </summary>
+    
+      <category term="计算机基础" scheme="https://geekerstar.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
     
     
       <category term="操作系统" scheme="https://geekerstar.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
@@ -211,36 +227,6 @@
   </entry>
   
   <entry>
-    <title>操作系统知识点总结</title>
-    <link href="https://geekerstar.github.io/2019/01/02/cao-zuo-xi-tong-zhi-shi-dian-zong-jie/"/>
-    <id>https://geekerstar.github.io/2019/01/02/cao-zuo-xi-tong-zhi-shi-dian-zong-jie/</id>
-    <published>2019-01-02T14:32:57.000Z</published>
-    <updated>2019-01-02T12:44:29.591Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;!-- TOC --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#1-进程间通信方式&quot;&gt;1. 进程间通信方式&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#2-操作系统的特征&quot;&gt;2. 操作系统的特征&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#3-进程的组成&quot;&gt;3.
-        
-      
-    
-    </summary>
-    
-      <category term="计算机基础" scheme="https://geekerstar.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="操作系统" scheme="https://geekerstar.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-  </entry>
-  
-  <entry>
     <title>写给java开发的运维笔记（初级篇）</title>
     <link href="https://geekerstar.github.io/2019/01/01/yunwei1/"/>
     <id>https://geekerstar.github.io/2019/01/01/yunwei1/</id>
@@ -269,34 +255,6 @@
   </entry>
   
   <entry>
-    <title>Web服务器性能压力测试工具</title>
-    <link href="https://geekerstar.github.io/2019/01/01/web-test/"/>
-    <id>https://geekerstar.github.io/2019/01/01/web-test/</id>
-    <published>2019-01-01T14:32:57.000Z</published>
-    <updated>2019-01-02T12:43:08.924Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#%E6%B5%8B%E8%AF%95&quot;&gt;- 测试&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="测试" scheme="https://geekerstar.github.io/categories/%E6%B5%8B%E8%AF%95/"/>
-    
-    
-      <category term="测试" scheme="https://geekerstar.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>linux下安装、卸载Tomcat脚本</title>
     <link href="https://geekerstar.github.io/2019/01/01/tomcat-install/"/>
     <id>https://geekerstar.github.io/2019/01/01/tomcat-install/</id>
@@ -321,6 +279,34 @@
       <category term="linux" scheme="https://geekerstar.github.io/tags/linux/"/>
     
       <category term="tomcat" scheme="https://geekerstar.github.io/tags/tomcat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Web服务器性能压力测试工具</title>
+    <link href="https://geekerstar.github.io/2019/01/01/web-test/"/>
+    <id>https://geekerstar.github.io/2019/01/01/web-test/</id>
+    <published>2019-01-01T14:32:57.000Z</published>
+    <updated>2019-01-02T12:43:08.924Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#%E6%B5%8B%E8%AF%95&quot;&gt;- 测试&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="测试" scheme="https://geekerstar.github.io/categories/%E6%B5%8B%E8%AF%95/"/>
+    
+    
+      <category term="测试" scheme="https://geekerstar.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
@@ -406,9 +392,9 @@
       <category term="设计模式" scheme="https://geekerstar.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
     
-      <category term="设计模式" scheme="https://geekerstar.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
       <category term="代理模式" scheme="https://geekerstar.github.io/tags/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="设计模式" scheme="https://geekerstar.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
@@ -565,6 +551,39 @@
     
     
       <category term="NIO" scheme="https://geekerstar.github.io/tags/NIO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java8 foreach</title>
+    <link href="https://geekerstar.github.io/2018/12/26/foreach/"/>
+    <id>https://geekerstar.github.io/2018/12/26/foreach/</id>
+    <published>2018-12-26T14:32:57.000Z</published>
+    <updated>2019-01-02T12:36:41.746Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在这篇文章中我将向你演示如何使用Java8中的&lt;code&gt;foreach&lt;/code&gt;操作&lt;code&gt;List&lt;/code&gt;和&lt;code&gt;Map&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;1-Foreach操作Map&quot;&gt;&lt;a href=&quot;#1-Foreach操作Map&quot; class=&quot;headerlink&quot; title=&quot;1. Foreach操作Map&quot;&gt;&lt;/a&gt;1. Foreach操作Map&lt;/h3&gt;&lt;p&gt;1.1 正常方式遍历Map&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;Map&amp;lt;String, Integer&amp;gt; items = new HashMap&amp;lt;&amp;gt;();
+items.put(&amp;quot;A&amp;quot;, 10);
+items.put(&amp;quot;B&amp;quot;, 20);
+items.put(&amp;quot;C&amp;quot;, 30);
+items.put(&amp;quot;D&amp;quot;, 40);
+items.put(&amp;quot;E&amp;quot;, 50);
+items.put(&amp;quot;F&amp;quot;, 60);
+
+for (Map.Entry&amp;lt;String, Integer&amp;gt; entry : items.entrySet()) {
+    System.out.println(&amp;quot;Item : &amp;quot; + entry.getKey() + &amp;quot; Count : &amp;quot; + entry.getValue());
+}
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="java" scheme="https://geekerstar.github.io/categories/java/"/>
+    
+    
+      <category term="java8" scheme="https://geekerstar.github.io/tags/java8/"/>
     
   </entry>
   
