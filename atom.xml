@@ -108,6 +108,34 @@
   </entry>
   
   <entry>
+    <title>深入理解 Java 虚拟机 笔记总结</title>
+    <link href="https://geekerstar.github.io/2019/01/03/jvmv2/"/>
+    <id>https://geekerstar.github.io/2019/01/03/jvmv2/</id>
+    <published>2019-01-03T14:09:47.000Z</published>
+    <updated>2019-01-03T12:41:37.507Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;JVM 内存结构&lt;/li&gt;
+&lt;li&gt;HotSpot
+        
+      
+    
+    </summary>
+    
+      <category term="JVM" scheme="https://geekerstar.github.io/categories/JVM/"/>
+    
+    
+      <category term="JVM" scheme="https://geekerstar.github.io/tags/JVM/"/>
+    
+  </entry>
+  
+  <entry>
     <title>操作系统学习总结</title>
     <link href="https://geekerstar.github.io/2019/01/02/cao-zuo-xi-tong-xue-xi-zong-jie/"/>
     <id>https://geekerstar.github.io/2019/01/02/cao-zuo-xi-tong-xue-xi-zong-jie/</id>
@@ -131,6 +159,38 @@
     
     
       <category term="操作系统" scheme="https://geekerstar.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>零散知识</title>
+    <link href="https://geekerstar.github.io/2019/01/02/ling-san-zhi-shi/"/>
+    <id>https://geekerstar.github.io/2019/01/02/ling-san-zhi-shi/</id>
+    <published>2019-01-02T14:32:57.000Z</published>
+    <updated>2019-01-02T12:45:13.298Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;!-- TOC --&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#1-xml和json的区别&quot;&gt;1. XML和JSON的区别&lt;/a&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;#11-xml&quot;&gt;1.1. XML&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#12-json&quot;&gt;1.2.
+        
+      
+    
+    </summary>
+    
+      <category term="其他" scheme="https://geekerstar.github.io/categories/%E5%85%B6%E4%BB%96/"/>
+    
+    
+      <category term="xml" scheme="https://geekerstar.github.io/tags/xml/"/>
+    
+      <category term="json" scheme="https://geekerstar.github.io/tags/json/"/>
     
   </entry>
   
@@ -195,38 +255,6 @@
   </entry>
   
   <entry>
-    <title>零散知识</title>
-    <link href="https://geekerstar.github.io/2019/01/02/ling-san-zhi-shi/"/>
-    <id>https://geekerstar.github.io/2019/01/02/ling-san-zhi-shi/</id>
-    <published>2019-01-02T14:32:57.000Z</published>
-    <updated>2019-01-02T12:45:13.298Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;!-- TOC --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#1-xml和json的区别&quot;&gt;1. XML和JSON的区别&lt;/a&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#11-xml&quot;&gt;1.1. XML&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#12-json&quot;&gt;1.2.
-        
-      
-    
-    </summary>
-    
-      <category term="其他" scheme="https://geekerstar.github.io/categories/%E5%85%B6%E4%BB%96/"/>
-    
-    
-      <category term="xml" scheme="https://geekerstar.github.io/tags/xml/"/>
-    
-      <category term="json" scheme="https://geekerstar.github.io/tags/json/"/>
-    
-  </entry>
-  
-  <entry>
     <title>写给java开发的运维笔记（初级篇）</title>
     <link href="https://geekerstar.github.io/2019/01/01/yunwei1/"/>
     <id>https://geekerstar.github.io/2019/01/01/yunwei1/</id>
@@ -255,34 +283,6 @@
   </entry>
   
   <entry>
-    <title>linux下安装、卸载Tomcat脚本</title>
-    <link href="https://geekerstar.github.io/2019/01/01/tomcat-install/"/>
-    <id>https://geekerstar.github.io/2019/01/01/tomcat-install/</id>
-    <published>2019-01-01T14:32:57.000Z</published>
-    <updated>2019-01-02T12:42:36.675Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;linux下安装Tomcat脚本&quot;&gt;&lt;a href=&quot;#linux下安装Tomcat脚本&quot; class=&quot;headerlink&quot; title=&quot;linux下安装Tomcat脚本&quot;&gt;&lt;/a&gt;linux下安装Tomcat脚本&lt;/h2&gt;&lt;pre class=&quot;
-        
-      
-    
-    </summary>
-    
-      <category term="linux" scheme="https://geekerstar.github.io/categories/linux/"/>
-    
-    
-      <category term="linux" scheme="https://geekerstar.github.io/tags/linux/"/>
-    
-      <category term="tomcat" scheme="https://geekerstar.github.io/tags/tomcat/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Web服务器性能压力测试工具</title>
     <link href="https://geekerstar.github.io/2019/01/01/web-test/"/>
     <id>https://geekerstar.github.io/2019/01/01/web-test/</id>
@@ -307,6 +307,34 @@
     
     
       <category term="测试" scheme="https://geekerstar.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>linux下安装、卸载Tomcat脚本</title>
+    <link href="https://geekerstar.github.io/2019/01/01/tomcat-install/"/>
+    <id>https://geekerstar.github.io/2019/01/01/tomcat-install/</id>
+    <published>2019-01-01T14:32:57.000Z</published>
+    <updated>2019-01-02T12:42:36.675Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;linux下安装Tomcat脚本&quot;&gt;&lt;a href=&quot;#linux下安装Tomcat脚本&quot; class=&quot;headerlink&quot; title=&quot;linux下安装Tomcat脚本&quot;&gt;&lt;/a&gt;linux下安装Tomcat脚本&lt;/h2&gt;&lt;pre class=&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="https://geekerstar.github.io/categories/linux/"/>
+    
+    
+      <category term="linux" scheme="https://geekerstar.github.io/tags/linux/"/>
+    
+      <category term="tomcat" scheme="https://geekerstar.github.io/tags/tomcat/"/>
     
   </entry>
   
@@ -551,39 +579,6 @@
     
     
       <category term="NIO" scheme="https://geekerstar.github.io/tags/NIO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>java8 foreach</title>
-    <link href="https://geekerstar.github.io/2018/12/26/foreach/"/>
-    <id>https://geekerstar.github.io/2018/12/26/foreach/</id>
-    <published>2018-12-26T14:32:57.000Z</published>
-    <updated>2019-01-02T12:36:41.746Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在这篇文章中我将向你演示如何使用Java8中的&lt;code&gt;foreach&lt;/code&gt;操作&lt;code&gt;List&lt;/code&gt;和&lt;code&gt;Map&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&quot;1-Foreach操作Map&quot;&gt;&lt;a href=&quot;#1-Foreach操作Map&quot; class=&quot;headerlink&quot; title=&quot;1. Foreach操作Map&quot;&gt;&lt;/a&gt;1. Foreach操作Map&lt;/h3&gt;&lt;p&gt;1.1 正常方式遍历Map&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;Map&amp;lt;String, Integer&amp;gt; items = new HashMap&amp;lt;&amp;gt;();
-items.put(&amp;quot;A&amp;quot;, 10);
-items.put(&amp;quot;B&amp;quot;, 20);
-items.put(&amp;quot;C&amp;quot;, 30);
-items.put(&amp;quot;D&amp;quot;, 40);
-items.put(&amp;quot;E&amp;quot;, 50);
-items.put(&amp;quot;F&amp;quot;, 60);
-
-for (Map.Entry&amp;lt;String, Integer&amp;gt; entry : items.entrySet()) {
-    System.out.println(&amp;quot;Item : &amp;quot; + entry.getKey() + &amp;quot; Count : &amp;quot; + entry.getValue());
-}
-&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-      <category term="java" scheme="https://geekerstar.github.io/categories/java/"/>
-    
-    
-      <category term="java8" scheme="https://geekerstar.github.io/tags/java8/"/>
     
   </entry>
   
