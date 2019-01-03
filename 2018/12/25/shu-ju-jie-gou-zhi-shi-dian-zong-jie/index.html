@@ -5,9 +5,26 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="设计模式学习总结, 极客文库">
+    <meta name="keywords" content="数据结构知识点总结, 极客文库">
     <meta name="description" content="
-设计模式创建型模式创建型模式创建型模式的作用就是创建对象，说到创建一个对象，最熟悉的就是 new 一个对象，然后 set 相关属性。但是，在很多场景下，我们需要给客户端提供更加友好的创建对象的方式，尤其是那种我们定义了类，但是需要提供给其">
+
+1. 各种排序算法的性质
+2. 二叉搜索树、AVL树和红黑树的复杂度
+3. 红黑树的性质
+4. 图的基本术语
+5. B树的性质
+6. B+树的性质
+7. B树和B+树的区别
+
+
+1. 各种排序算法的性质
+
+
+算法种类
+最好
+平均
+最坏
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +32,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>设计模式学习总结 | 极客文库-知识库</title>
+    <title>数据结构知识点总结 | 极客文库-知识库</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -270,13 +287,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        设计模式学习总结
+                        数据结构知识点总结
                     </div>
                 </div>
             </div>
@@ -387,8 +404,12 @@
             
             <div class="article-tag">
                 
-                <a href="/tags/设计模式/" target="_blank">
-                    <span class="chip bg-color">设计模式</span>
+                <a href="/tags/数据结构/" target="_blank">
+                    <span class="chip bg-color">数据结构</span>
+                </a>
+                
+                <a href="/tags/算法/" target="_blank">
+                    <span class="chip bg-color">算法</span>
                 </a>
                 
             </div>
@@ -398,88 +419,204 @@
                 <span class="post-cate">
                     <i class="fa fa-bookmark fa-fw icon-category"></i>
                     
-                    <a href="/categories/后端/" class="post-category" target="_blank">
-                        后端
-                    </a>
-                    
-                    <a href="/categories/后端/技术总结/" class="post-category" target="_blank">
-                        技术总结
+                    <a href="/categories/数据结构/" class="post-category" target="_blank">
+                        数据结构
                     </a>
                     
                 </span>
                 
 
                 <span class="post-date">
-                    <i class="fa fa-clock-o fa-fw"></i>2019-01-03
+                    <i class="fa fa-clock-o fa-fw"></i>2018-12-25
                 </span>
             </div>
         </div>
         <hr>
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <a id="more"></a>
-<h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><h1 id="创建型模式"><a href="#创建型模式" class="headerlink" title="创建型模式"></a>创建型模式</h1><p>创建型模式<br>创建型模式的作用就是创建对象，说到创建一个对象，最熟悉的就是 new 一个对象，然后 set 相关属性。但是，在很多场景下，我们需要给客户端提供更加友好的创建对象的方式，尤其是那种我们定义了类，但是需要提供给其他开发者用的时候。</p>
-<h2 id="单例"><a href="#单例" class="headerlink" title="单例"></a>单例</h2><pre><code>单例模式保证全局的单例类只有一个实例，这样的话使用的时候直接获取即可，比如数据库的一个连接，Spring里的bean，都可以是单例的。
-
-单例模式一般有5种写法。
-
-第一种是饿汉模式，先把单例进行实例化，获取的时候通过静态方法直接获取即可。缺点是类加载后就完成了类的实例化，浪费部分空间。
-
-第二种是饱汉模式，先把单例置为null，然后通过静态方法获取单例时再进行实例化，但是可能有多线程同时进行实例化，会出现并发问题。
-
-第三种是逐步改进的方法，一开始可以用synchronized关键字进行同步，但是开销太大，而后改成使用volatile修饰单例，然后通过一次检查判断单例是否已初始化，如果未初始化就使用synchronized代码块，再次检查单例防止在这期间被初始化，而后才真正进行初始化。
-
-第四种是使用静态内部类来实现，静态内部类只在被使用的时候才进行初始化，所以在内部类中进行单例的实例化，只有用到的时候才会运行实例化代码。然后外部类再通过静态方法返回静态内部类的单例即可。
-
-第五种是枚举类，枚举类的底层实现其实也是内部类。枚举类确保每个类对象在全局是唯一的。所以保证它是单例，这个方法是最简单的。
-</code></pre><h2 id="工厂模式"><a href="#工厂模式" class="headerlink" title="工厂模式"></a>工厂模式</h2><pre><code>简单工厂一般是用一个工厂创建多个类的实例。
-
-工厂模式一般是指一个工厂服务一个接口，为这个接口的实现类进行实例化
-
-抽象工厂模式是指一个工厂服务于一个产品族，一个产品族可能包含多个接口，接口又会包含多个实现类，通过一个工厂就可以把这些绑定在一起，非常方便。
-</code></pre><h2 id="原型模式"><a href="#原型模式" class="headerlink" title="原型模式"></a>原型模式</h2><pre><code>一般通过一个实例进行克隆从而获得更多同一原型的实例。使用实例的clone方法即可完成。
-</code></pre><h2 id="建造者模式"><a href="#建造者模式" class="headerlink" title="建造者模式"></a>建造者模式</h2><pre><code>建造者模式中有一个概念叫做链式调用，链式调用为一个类的实例化提供便利，一般提供系列的方法进行实例化，实际上就是将set方法改造一下，将原本返回为空的set方法改为返回this实例，从而实现链式调用。
-
-建造者模式在此基础上加入了builder方法，提供给外部进行调用，同样使用链式调用来完成参数注入。
-</code></pre><h1 id="结构型模式"><a href="#结构型模式" class="headerlink" title="结构型模式"></a>结构型模式</h1><p>结构型模式<br>前面创建型模式介绍了创建对象的一些设计模式，这节介绍的结构型模式旨在通过改变代码结构来达到解耦的目的，使得我们的代码容易维护和扩展。</p>
-<h2 id="桥接模式"><a href="#桥接模式" class="headerlink" title="桥接模式"></a>桥接模式</h2><p>有点复杂。建议参考原文</p>
-<h2 id="适配器模式"><a href="#适配器模式" class="headerlink" title="适配器模式"></a>适配器模式</h2><p>适配器模式用于将两个不同的类进行适配。</p>
-<p>适配器模式和代理模式的异同</p>
-<p> 比较这两种模式，其实是比较对象适配器模式和代理模式，在代码结构上，<br> 它们很相似，都需要一个具体的实现类的实例。<br> 但是它们的目的不一样，代理模式做的是增强原方法的活；<br> 适配器做的是适配的活，为的是提供“把鸡包装成鸭，然后当做鸭来使用”，<br> 而鸡和鸭它们之间原本没有继承关系。</p>
-<p> 适配器模式可以分为类适配器，对象适配器等。</p>
-<p> 类适配器通过继承父类就可以把自己适配成父类了。<br> 而对象适配器则需要把对象传入另一个对象的构造方法中，以便进行包装。</p>
-<h2 id="享元模式"><a href="#享元模式" class="headerlink" title="享元模式"></a>享元模式</h2><p>/ 享元模式的核心在于享元工厂类，<br>// 享元工厂类的作用在于提供一个用于存储享元对象的享元池，<br>// 用户需要对象时，首先从享元池中获取，<br>// 如果享元池中不存在，则创建一个新的享元对象返回给用户，<br>// 在享元池中保存该新增对象。</p>
-<p>//享元模式<br>//        英文是 Flyweight Pattern，不知道是谁最先翻译的这个词，感觉这翻译真的不好理解，我们试着强行关联起来吧。Flyweight 是轻量级的意思，享元分开来说就是 共享 元器件，也就是复用已经生成的对象，这种做法当然也就是轻量级的了。<br>//<br>//        复用对象最简单的方式是，用一个 HashMap 来存放每次新生成的对象。每次需要一个对象的时候，先到 HashMap 中看看有没有，如果没有，再生成新的对象，然后将这个对象放入 HashMap 中。<br>//<br>//        这种简单的代码我就不演示了。</p>
-<h2 id="代理模式"><a href="#代理模式" class="headerlink" title="代理模式"></a>代理模式</h2><p>//    我们发现没有，代理模式说白了就是做 “方法包装” 或做 “方法增强”。<br>// 在面向切面编程中，算了还是不要吹捧这个名词了，在 AOP 中，<br>// 其实就是动态代理的过程。比如 Spring 中，<br>// 我们自己不定义代理类，但是 Spring 会帮我们动态来定义代理，<br>// 然后把我们定义在 @Before、@After、@Around 中的代码逻辑动态添加到代理中。</p>
-<h2 id="外观模式"><a href="#外观模式" class="headerlink" title="外观模式"></a>外观模式</h2><p>外观模式一般封装具体的实现细节，为用户提供一个更加简单的接口。</p>
-<p>通过一个方法调用就可以获取需要的内容。</p>
-<h2 id="组合模式"><a href="#组合模式" class="headerlink" title="组合模式"></a>组合模式</h2><p>//组合模式用于表示具有层次结构的数据，使得我们对单个对象和组合对象的访问具有一致性。</p>
-<p>//直接看一个例子吧，每个员工都有姓名、部门、薪水这些属性，<br>// 同时还有下属员工集合（虽然可能集合为空），<br>// 而下属员工和自己的结构是一样的，<br>// 也有姓名、部门这些属性，<br>// 同时也有他们的下属员工集合。</p>
-<pre><code>class Employee {
-    private String name;
-    private String dept;
-    private int salary;
-    private List&lt;Employee&gt; subordinates; // 下属
-}
-</code></pre><h2 id="装饰者模式"><a href="#装饰者模式" class="headerlink" title="装饰者模式"></a>装饰者模式</h2><h2 id="装饰者"><a href="#装饰者" class="headerlink" title="装饰者"></a>装饰者</h2><p>装饰者模式把每个增强类都继承最高级父类。然后需要功能增强时把类实例传入增强类即可，然后增强类在使用时就可以增强原有类的功能了。</p>
-<p>和代理模式不同的是，装饰者模式每个装饰类都继承父类，并且可以进行多级封装。</p>
-<h1 id="行为型模式"><a href="#行为型模式" class="headerlink" title="行为型模式"></a>行为型模式</h1><p>行为型模式<br>行为型模式关注的是各个类之间的相互作用，将职责划分清楚，使得我们的代码更加地清晰。</p>
-<h2 id="策略模式"><a href="#策略模式" class="headerlink" title="策略模式"></a>策略模式</h2><p>策略模式一般把一个策略作为一个类，并且在需要指定策略的时候传入实例，于是我们可以在需要使用算法的地方传入指定算法。</p>
-<h2 id="命令模式"><a href="#命令模式" class="headerlink" title="命令模式"></a>命令模式</h2><p>命令模式一般分为命令发起者，命令以及命令接受者三个角色。</p>
-<p>命令发起者在使用时需要注入命令实例。然后执行命令调用。</p>
-<p>命令调用实际上会调用命令接收者的方法进行实际调用。</p>
-<p>比如遥控器按钮相当于一条命令，点击按钮时命令运行，自动调用电视机提供的方法即可。</p>
-<h2 id="模板方法模式"><a href="#模板方法模式" class="headerlink" title="模板方法模式"></a>模板方法模式</h2><p>模板方法一般指提供了一个方法模板，并且其中有部分实现类和部分抽象类，并且规定了执行顺序。</p>
-<p>实现类是模板提供好的方法。而抽象类则需要用户自行实现。</p>
-<p>模板方法规定了一个模板中方法的执行顺序，非常适合一些开发框架，于是模板方法也广泛运用在开源框架中。</p>
-<h2 id="状态模式"><a href="#状态模式" class="headerlink" title="状态模式"></a>状态模式</h2><p>少见。</p>
-<h2 id="观察者模式和事件监听机制"><a href="#观察者模式和事件监听机制" class="headerlink" title="观察者模式和事件监听机制"></a>观察者模式和事件监听机制</h2><p>观察者模式一般用于订阅者和消息发布者之间的数据订阅。</p>
-<p>一般分为观察者和主题，观察者订阅主题，把实例注册到主题维护的观察者列表上。</p>
-<p>而主题更新数据时自动把数据推给观察者或者通知观察者数据已经更新。</p>
-<p>但是由于这样的方式消息推送耦合关系比较紧。并且很难在不打开数据的情况下知道数据类型是什么。</p>
-<p>知道后来为了使数据格式更加灵活，使用了事件和事件监听器的模式，事件包装的事件类型和事件数据，从主题和观察者中解耦。</p>
-<p>主题当事件发生时，触发该事件的所有监听器，把该事件通过监听器列表发给每个监听器，监听得到事件以后，首先根据自己支持处理的事件类型中找到对应的事件处理器，再用处理器处理对应事件。</p>
-<h2 id="责任链模式"><a href="#责任链模式" class="headerlink" title="责任链模式"></a>责任链模式</h2><p>责任链通常需要先建立一个单向链表，然后调用方只需要调用头部节点就可以了，后面会自动流转下去。比如流程审批就是一个很好的例子，只要终端用户提交申请，根据申请的内容信息，自动建立一条责任链，然后就可以开始流转了。</p>
+                <!-- TOC -->
+<ul>
+<li><a href="#1-各种排序算法的性质">1. 各种排序算法的性质</a></li>
+<li><a href="#2-二叉搜索树avl树和红黑树的复杂度">2. 二叉搜索树、AVL树和红黑树的复杂度</a></li>
+<li><a href="#3-红黑树的性质">3. 红黑树的性质</a></li>
+<li><a href="#4-图的基本术语">4. 图的基本术语</a></li>
+<li><a href="#5-b树的性质">5. B树的性质</a></li>
+<li><a href="#6-b树的性质">6. B+树的性质</a></li>
+<li><a href="#7-b树和b树的区别">7. B树和B+树的区别</a></li>
+</ul>
+<!-- /TOC -->
+<h2 id="1-各种排序算法的性质"><a href="#1-各种排序算法的性质" class="headerlink" title="1. 各种排序算法的性质"></a>1. 各种排序算法的性质</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">算法种类</th>
+<th style="text-align:center">最好</th>
+<th style="text-align:center">平均</th>
+<th style="text-align:center">最坏</th>
+<th style="text-align:center">空间复杂度</th>
+<th style="text-align:center">是否稳定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">直接插入排序</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">冒泡排序</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">简单选择排序</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">快速排序</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(n^2)</td>
+<td style="text-align:center">O(logn)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">堆排序</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(1)</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">二路归并排序</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(nlogn)</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">是</td>
+</tr>
+<tr>
+<td style="text-align:center">基数排序</td>
+<td style="text-align:center">O(d(n+r))</td>
+<td style="text-align:center">O(d(n+r))</td>
+<td style="text-align:center">O(d(n+r))</td>
+<td style="text-align:center">O(r)</td>
+<td style="text-align:center">是</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-二叉搜索树、AVL树和红黑树的复杂度"><a href="#2-二叉搜索树、AVL树和红黑树的复杂度" class="headerlink" title="2. 二叉搜索树、AVL树和红黑树的复杂度"></a>2. 二叉搜索树、AVL树和红黑树的复杂度</h2><table>
+<thead>
+<tr>
+<th style="text-align:center">树种类</th>
+<th style="text-align:center">空间</th>
+<th style="text-align:center">空间</th>
+<th style="text-align:center">查找</th>
+<th style="text-align:center">查找</th>
+<th style="text-align:center">插入</th>
+<th style="text-align:center">插入</th>
+<th style="text-align:center">删除</th>
+<th style="text-align:center">删除</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">平均</td>
+<td style="text-align:center">最坏</td>
+<td style="text-align:center">平均</td>
+<td style="text-align:center">最坏</td>
+<td style="text-align:center">平均</td>
+<td style="text-align:center">最坏</td>
+<td style="text-align:center">平均</td>
+<td style="text-align:center">最坏</td>
+</tr>
+<tr>
+<td style="text-align:center">二叉搜索树</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">O(logn)</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">O(logn)</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">O(logn)</td>
+<td style="text-align:center">O(n)</td>
+</tr>
+<tr>
+<td style="text-align:center">AVL树</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">O(logn)</td>
+<td style="text-align:center">O(logn)</td>
+<td style="text-align:center">O(logn)</td>
+<td style="text-align:center">O(logn)</td>
+<td style="text-align:center">O(logn)</td>
+<td style="text-align:center">O(logn)</td>
+</tr>
+<tr>
+<td style="text-align:center">红黑树</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">O(n)</td>
+<td style="text-align:center">O(logn)</td>
+<td style="text-align:center">O(logn)</td>
+<td style="text-align:center">O(logn)</td>
+<td style="text-align:center">O(logn)</td>
+<td style="text-align:center">O(logn)</td>
+<td style="text-align:center">O(logn)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-红黑树的性质"><a href="#3-红黑树的性质" class="headerlink" title="3. 红黑树的性质"></a>3. 红黑树的性质</h2><p>红黑树在满足二叉搜索树的要求外，还需满足如下要求：</p>
+<ul>
+<li>节点是红色或黑色。</li>
+<li>根是黑色。</li>
+<li>所有叶子都是黑色（叶子是NIL节点）。</li>
+<li>每个红色节点必须有两个黑色的子节点。（从每个叶子到根的所有路径上不能有两个连续的红色节点。）</li>
+<li>从任一节点到其每个叶子的所有简单路径都包含相同数目的黑色节点。</li>
+</ul>
+<h2 id="4-图的基本术语"><a href="#4-图的基本术语" class="headerlink" title="4. 图的基本术语"></a>4. 图的基本术语</h2><ul>
+<li>简单图：一个图G如果不存在重复边，也不存在顶点到自身的边，则称图G为简单图。</li>
+<li>无向完全图：在无向图中，如果任意两个顶点之间都存在边，则称该图为无向完全图。含有n个顶点的无向完全图有n(n-1)/2条边。</li>
+<li>有向完全图：在有向图中，如果任意两个顶点之间都存在方向互为相反的两条弧，则称该图为有向完全图。含有n个顶点的有向完全图有n(n-1)条有向边。</li>
+<li>连通：在无向图中，若从顶点v到顶点w有路径存在，则称v和w是连通的。</li>
+<li>连通图：若图G中任意两个顶点都是连通的，则称图G为连通图。</li>
+<li>连通分量：无向图的极大连通字图称为连通分量。</li>
+<li>强连通图：在有向图中，若从顶点v到顶点w和从顶点w到顶点v之间都有路径，则称这两个顶点是强连通的。若图中任何一对顶点都是强连通的，则称此图为强连通图。</li>
+<li>强连通分量：有向图中的极大强连通字图称为有向图的强连通分量。</li>
+<li>生成树：连通图的生成树是包含图中全部顶点的一个极小连通字图。</li>
+</ul>
+<h2 id="5-B树的性质"><a href="#5-B树的性质" class="headerlink" title="5. B树的性质"></a>5. B树的性质</h2><p>B树是一种多路平衡查找树，B树中所有结点的孩子结点数的最大值称为B树的阶，通常用m表示。一颗m阶B树，或为空树，或为满足下列特性的m叉树：</p>
+<ul>
+<li>树中每个结点至多有m颗子树（即至多含有m-1个关键字）。</li>
+<li>若根结点不是叶子结点，则至少有两颗子树。</li>
+<li>除根结点外的所有非叶结点至少有⌈m/2⌉颗子树（即至少含有⌈m/2⌉-1个关键字）。</li>
+<li>所有的非终端结点中有以下数据：[n, P0, K1, P1, K2, P2, …, Kn, Pn]。其中，Ki（i = 1, 2, …, n）为结点的关键字，且有K1 &lt; K2 &lt; … &lt; Kn；Pi（i = 0, 1, …, n）为只想子树根结点的指针，且指针Pi-1所指子树中所有结点的关键字均小于Ki，Pn所指子树中所有结点的关键字均大于Kn，n（⌈m/2⌉ - 1 &lt;= n &lt;= m -1）为结点中关键字的个数。</li>
+<li>所有的叶结点都出现在同一层次上，并且不带信息（可以看做是外部结点，实际上这些结点不存在，指向这些结点的指针为空）。</li>
+</ul>
+<h2 id="6-B-树的性质"><a href="#6-B-树的性质" class="headerlink" title="6. B+树的性质"></a>6. B+树的性质</h2><p>B+树是B树的一种变形树，一颗m阶B+树应满足下列条件：</p>
+<ul>
+<li>每个分支结点最多有m颗子树（子结点）。</li>
+<li>根结点或者没有子树，或者至少有两颗子树，其他每个分支结点至少有⌈m/2⌉颗子树。</li>
+<li>根结点的子树个数与关键字个数相等。</li>
+<li>所有叶结点包含全部关键字及其只想相应记录的指针，而且叶结点中将关键字按大小顺序排列，并且相邻叶结点顺序链接起来，所有叶结点在同一层。</li>
+<li>所有分支结点（可以看成是索引的索引）中仅包含其子树（即下一级的索引块）中关键字的最大值及指向其子树的指针。</li>
+</ul>
+<h2 id="7-B树和B-树的区别"><a href="#7-B树和B-树的区别" class="headerlink" title="7. B树和B+树的区别"></a>7. B树和B+树的区别</h2><ul>
+<li>在B+树中，具有n个关键字的结点只含有n颗子树，即每个关键字对应一颗子树；而在B树中，具有n个关键字的结点含有n + 1颗子树。</li>
+<li>在B+树中，每个非根结点关键字个数n的范围是⌈m/2⌉ - 1 &lt;= n &lt;= m - 1（根结点：1 &lt;= n &lt;= m - 1）。</li>
+<li>在B+树中，所有非叶结点仅起到索引作用，即结点中的每个索引项只含有对应子树的最大关键字和指向该子树的指针，不含有该关键字对应记录的存储地址。</li>
+<li>在B+树中，叶结点包含了全部关键字，即其他非叶结点中的关键字包含在叶结点中；而在B树中，叶结点包含的关键字和其他结点包含的关键字是不重复的。</li>
+</ul>
 
             </div>
             <hr>
@@ -618,7 +755,7 @@
                     <span class="reprint-tip">转载请注明: </span>
                     <a href="https://geekerstar.github.io" class="b-link-green">极客文库-知识库</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2019/01/03/she-ji-mo-shi-xue-xi-zong-jie/" class="b-link-green">设计模式学习总结</a>
+                    <a href="/2018/12/25/shu-ju-jie-gou-zhi-shi-dian-zong-jie/" class="b-link-green">数据结构知识点总结</a>
                 </p>
             </div>
         </div>
@@ -640,7 +777,7 @@
         repo: 'geekerstar.github.io',
         owner: 'geekerstar',
         admin: "geekerstar",
-        id: '2019-01-03T22-32-57',
+        id: '2018-12-25T22-32-57',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -662,23 +799,74 @@
     <div class="row article-row">
         
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">本篇</div>
+            <div class="article-badge left-badge text-color">上一篇</div>
             <div class="card">
-                <a href="/2019/01/03/she-ji-mo-shi-xue-xi-zong-jie/">
+                <a href="/2018/12/26/java-bing-fa-zong-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="设计模式学习总结">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Java并发总结">
                         
-                        <span class="card-title">设计模式学习总结</span>
+                        <span class="card-title">Java并发总结</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">
-设计模式创建型模式创建型模式创建型模式的作用就是创建对象，说到创建一个对象，最熟悉的就是 new 一个对象，然后 set 相关属性。但是，在很多场景下，我们需要给客户端提供更加友好的创建对象的方式，尤其是那种我们定义了类，但是需要提供给其</div>
+                    <div class="summary">线程安全线程安全一般指多线程之间的操作结果不会因为线程调度的顺序不同而发生改变。
+互斥和同步互斥一般指资源的独占访问，同步则要求同步代码中的代码顺序执行，并且也是单线程独占的。
+JMM内存模型JVM中的内存分区包括堆，栈，方法区等区域，这些</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-26
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java/" class="post-category" target="_blank">
+                                    java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/" target="_blank">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/并发/" target="_blank">
+                        <span class="chip bg-color">并发</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">下一篇</div>
+            <div class="card">
+                <a href="/2018/12/24/fen-bu-shi-ji-zhu-shi-jian-zong-jie/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="分布式技术实践总结">
+                        
+                        <span class="card-title">分布式技术实践总结</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">分布式技术分布式数据和nosql分布式一般是指分布式部署的数据库。
+比如Hbase基于HDFS分布式部署，所以他是一个分布式数据库。
+当然MySQL也可以分布式部署，比如按照不同业务部署，或者把单表内容拆成多个表乃至多个库进行部署。
+一般M</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-03
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2018-12-24
                             </span>
                         <span class="publish-author">
                             
@@ -696,75 +884,11 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/设计模式/" target="_blank">
-                        <span class="chip bg-color">设计模式</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">下一篇</div>
-            <div class="card">
-                <a href="/2019/01/03/she-ji-mo-shi-zhi-shi-dian-zong-jie/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="设计模式知识点总结">
-                        
-                        <span class="card-title">设计模式知识点总结</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">
-
-1. 常用设计模式
-2. 设计模式的六大原则
-3. 什么是高内聚、低耦合？
-3.1. 内聚性
-3.2. 耦合性
-
-
-
-
-1. 常用设计模式
-策略模式
-观察者模式
-装饰者模式
-工厂方法
-抽象工厂模式
-单例模式
-命令模式
-适配器模式
-外观模</div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-01-03
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/设计模式/" class="post-category" target="_blank">
-                                    设计模式
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/设计模式/" target="_blank">
-                        <span class="chip bg-color">设计模式</span>
+                    <a href="/tags/分布式系统/" target="_blank">
+                        <span class="chip bg-color">分布式系统</span>
                     </a>
                     
                 </div>

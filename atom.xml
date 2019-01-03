@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://geekerstar.github.io/"/>
-  <updated>2019-01-02T12:59:05.288Z</updated>
+  <updated>2019-01-02T12:45:00.794Z</updated>
   <id>https://geekerstar.github.io/</id>
   
   <author>
@@ -15,38 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>数据结构知识点总结</title>
-    <link href="https://geekerstar.github.io/2019/12/02/shu-ju-jie-gou-zhi-shi-dian-zong-jie/"/>
-    <id>https://geekerstar.github.io/2019/12/02/shu-ju-jie-gou-zhi-shi-dian-zong-jie/</id>
-    <published>2019-12-02T14:32:57.000Z</published>
-    <updated>2019-01-02T12:59:05.288Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;!-- TOC --&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;#1-各种排序算法的性质&quot;&gt;1. 各种排序算法的性质&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;#2-二叉搜索树avl树和红黑树的复杂度&quot;&gt;2. 二叉搜索树、AVL树和红黑树的复杂度&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="数据结构" scheme="https://geekerstar.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-    
-      <category term="数据结构" scheme="https://geekerstar.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-      <category term="算法" scheme="https://geekerstar.github.io/tags/%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
   
   <entry>
     <title>设计模式学习总结</title>
@@ -579,6 +547,39 @@
     
     
       <category term="NIO" scheme="https://geekerstar.github.io/tags/NIO/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>java8 foreach</title>
+    <link href="https://geekerstar.github.io/2018/12/26/foreach/"/>
+    <id>https://geekerstar.github.io/2018/12/26/foreach/</id>
+    <published>2018-12-26T14:32:57.000Z</published>
+    <updated>2019-01-02T12:36:41.746Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在这篇文章中我将向你演示如何使用Java8中的&lt;code&gt;foreach&lt;/code&gt;操作&lt;code&gt;List&lt;/code&gt;和&lt;code&gt;Map&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;1-Foreach操作Map&quot;&gt;&lt;a href=&quot;#1-Foreach操作Map&quot; class=&quot;headerlink&quot; title=&quot;1. Foreach操作Map&quot;&gt;&lt;/a&gt;1. Foreach操作Map&lt;/h3&gt;&lt;p&gt;1.1 正常方式遍历Map&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;java&quot;&gt;Map&amp;lt;String, Integer&amp;gt; items = new HashMap&amp;lt;&amp;gt;();
+items.put(&amp;quot;A&amp;quot;, 10);
+items.put(&amp;quot;B&amp;quot;, 20);
+items.put(&amp;quot;C&amp;quot;, 30);
+items.put(&amp;quot;D&amp;quot;, 40);
+items.put(&amp;quot;E&amp;quot;, 50);
+items.put(&amp;quot;F&amp;quot;, 60);
+
+for (Map.Entry&amp;lt;String, Integer&amp;gt; entry : items.entrySet()) {
+    System.out.println(&amp;quot;Item : &amp;quot; + entry.getKey() + &amp;quot; Count : &amp;quot; + entry.getValue());
+}
+&lt;/code&gt;&lt;/pre&gt;
+    
+    </summary>
+    
+      <category term="java" scheme="https://geekerstar.github.io/categories/java/"/>
+    
+    
+      <category term="java8" scheme="https://geekerstar.github.io/tags/java8/"/>
     
   </entry>
   
